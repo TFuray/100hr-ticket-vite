@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout, reset } from '../features/auth/authSlice'
+import TakeOrder from '../pages/TableMap'
 
 const Header = () => {
   const navigate = useNavigate()
@@ -39,7 +40,7 @@ const Header = () => {
                 </a>
                 <ul className='p-2 bg-base-100'>
                   <li>
-                    <a>Take Order</a>
+                    <Link to='/map'>Table Map</Link>
                   </li>
                   <li>
                     <a>All Tickets</a>
@@ -57,12 +58,12 @@ const Header = () => {
             <>
               <li>
                 <Link to='/login'>
-                  <FaSignInAlt /> Login
+                   Login
                 </Link>
               </li>
               <li>
                 <Link to='/register'>
-                  <FaUser /> Register
+                  Register
                 </Link>
               </li>
             </>

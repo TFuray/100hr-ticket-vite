@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import TableMap from './pages/TableMap'
 
 
 function App () {
@@ -17,6 +18,7 @@ function App () {
             <Route path='/' element={<Dashboard />} />
             <Route path='/login' element={<Login />} />
             <Route path='/Register' element={<Register />} />
+            <Route path='/map' element={<TableMap />} />
           </Routes>
         </div>
       </Router>

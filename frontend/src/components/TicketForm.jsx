@@ -48,8 +48,9 @@ const TicketForm = () => {
             name='priority'
             id='priority'
             placeholder='Priority'
+            value='Priority'
           >
-            <option value='' disabled selected>
+            <option value='Priority' disabled>
               Priority
             </option>
             <option value='low'>Low</option>

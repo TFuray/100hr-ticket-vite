@@ -65,19 +65,6 @@ const Dashboard = () => {
           <h3>No Open Tickets</h3>
         )}
       </section>
-
-      {/* <section className='content'>
-        <h2>Open Tickets: All</h2>
-        {tickets.length > 0 ? (
-          <div className='goals'>
-            {tickets.map(ticket => (
-              <TicketItem key={ticket._id} ticket={ticket} />
-            ))}
-          </div>
-        ) : (
-          <h3>No Open Tickets</h3>
-        )}
-      </section> */}
     </>
   )
 }
