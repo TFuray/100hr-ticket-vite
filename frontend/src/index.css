@@ -269,3 +269,18 @@ h2{
  p{
   font-weight: 500;
  }
+
+ div.table{
+  height: 120px;
+  width: 120px;
+  margin-bottom: 15px;
+  background-color: green;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-around; 
+  font-weight: 600;
+  border-radius: 8px;
+ }
+ 
+ 
