@@ -1,9 +1,9 @@
 
-const Table = ( {table, seats, open, setOpen}) => {
+const Table = ( {table, seats, open, handleClick}) => {
  
   
   return (
-    <div className="table" >
+    <div onClick={handleClick} className="table" style={{backgroundColor: open ? 'green' : 'red'}}  >
       <div className="">Table: {table} </div>
       <div
       >Seats: {seats}</div>

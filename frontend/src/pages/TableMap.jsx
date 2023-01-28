@@ -5,7 +5,11 @@ import Table from '../components/Table'
 const TableMap = () => {
   const [tableList, setTableList] = useState(tableData)
   const [open, setOpen] = useState(true) 
-  
+  function handleClick(key) {
+    setTableList(...tableList, tableList.key(setOpen(!open))
+ ) 
+  }
+
 
   return (
     <div>
@@ -18,6 +22,7 @@ const TableMap = () => {
                 table={table.table}
                 seats={table.seats}
                 open={open}
+                handleClick={handleClick}
               />
             </div>
           )

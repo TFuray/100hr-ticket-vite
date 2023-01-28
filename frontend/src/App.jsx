@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import TableMap from './pages/TableMap'
+import Orders from './pages/Orders'
 
 
 function App () {
@@ -19,6 +20,7 @@ function App () {
             <Route path='/login' element={<Login />} />
             <Route path='/Register' element={<Register />} />
             <Route path='/map' element={<TableMap />} />
+            <Route path='/orders' element={<Orders />} />
           </Routes>
         </div>
       </Router>
