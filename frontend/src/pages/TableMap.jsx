@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import tableData from '../data/tableData'
 import Table from '../components/Table'
 
 const TableMap = () => {
