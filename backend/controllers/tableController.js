@@ -11,11 +11,12 @@ const getTables = asyncHandler(async (rec, res) =>{
 // @desc    Toggle table open
 // @route   PUT /api/tables
 const toggleOpen = asyncHandler(async (req, res) => {
-  const table = await Table.findById(
+  const table = await Table.findByIdAndUpdate(
     req.params.id,
     req.body,
       {open: false}
     )
+  res.status(200).json(table)
 })
 
 module.exports = {

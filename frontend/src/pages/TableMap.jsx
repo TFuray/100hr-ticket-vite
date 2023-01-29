@@ -1,5 +1,8 @@
 import { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import Table from '../components/Table'
+import { getTables } from '../features/tables/tableSlice'
+
 
 const TableMap = () => {
   const [tableList, setTableList] = useState(tableData)
