@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import tableService from '../tables/tableService'
+import tableService from './tableService'
 
 const initialState = {
   tables: [],
@@ -11,7 +11,7 @@ const initialState = {
 
 // Get All Tables
 export const getTables = createAsyncThunk(
-  'tables/getAll',
+  'tables/getTables',
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token

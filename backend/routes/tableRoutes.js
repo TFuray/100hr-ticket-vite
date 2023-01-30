@@ -3,10 +3,11 @@ const router = express.Router()
 
 const{
   getTables,
-  toggleOpen
+  toggleOpen,
+  toggleClosed
 } = require('../controllers/tableController')
 
 router.route('/').get( getTables)
-router.route('/:id').put(toggleOpen)
+router.route('/:id').put(toggleOpen).put(toggleClosed)
 
 module.exports = router
