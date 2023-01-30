@@ -41,10 +41,24 @@ const deleteTicket = async (ticketId, token) => {
   return response.data
 }
 
+// Mark complete user ticket
+const completeTicket = async (ticketId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+
+  const response = await axios.put(API_URL + ticketId, config)
+
+  return response.data
+}
+
 const ticketService = {
   createTicket,
   getTickets,
-  deleteTicket
+  deleteTicket,
+  completeTicket
 }
 
 export default ticketService

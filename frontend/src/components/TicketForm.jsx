@@ -5,10 +5,8 @@ import { createTicket } from '../features/tickets/ticketSlice'
 const TicketForm = () => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
-  const [project, setProject] = useState('')
   const [assignedTo, setAssignedTo] = useState('')
   const [priority, setPriority] = useState('')
-  const [type, setType] = useState('')
 
   const dispatch = useDispatch()
 
@@ -16,7 +14,7 @@ const TicketForm = () => {
     e.preventDefault()
 
     dispatch(
-      createTicket({ title, description, project, assignedTo, priority, type })
+      createTicket({ title, description, assignedTo, priority})
     )
     setTitle('')
     setDescription('')
@@ -69,41 +67,21 @@ const TicketForm = () => {
             onChange={e => setDescription(e.target.value)}
           />
         </div>
-        <div className='form-group project'>
-          <label htmlFor='project'>Project</label>
-          <input
-            type='text'
-            name='project'
-            id='project'
-            placeholder='Project'
-            value={project}
-            onChange={e => setProject(e.target.value)}
-          />
-        </div>
 
         <div className='form-group assigned'>
           <label htmlFor='assignedTo'>Assigned To</label>
-          <input
+          <select
             type='text'
             name='assignedTo'
             placeholder='Assigned To'
             id='assignedTo'
-            value={assignedTo}
+            value='assignedTo'
             onChange={e => setAssignedTo(e.target.value)}
-          />
+          >
+          <option value="AssignedTo" disabled>Assigned To</option>
+          </select>
         </div>
 
-        <div className='form-group type'>
-          <label htmlFor='type'>Type</label>
-          <input
-            type='text'
-            name='type'
-            placeholder='type'
-            id='type'
-            value={type}
-            onChange={e => setType(e.target.value)}
-          />
-        </div>
         <div className='form-group'>
           <button className='btn btn-block' type='submit'>
             Add Ticket

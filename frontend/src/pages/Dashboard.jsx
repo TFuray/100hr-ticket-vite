@@ -6,8 +6,8 @@ import TicketForm from '../components/TicketForm'
 import TicketItem from '../components/TicketItem'
 import AddButton from '../components/AddButton'
 import Spinner from '../components/Spinner'
-import { getTickets } from '../features/tickets/ticketSlice'
-import { reset } from '../features/auth/authSlice'
+import { getTickets, reset } from '../features/tickets/ticketSlice'
+// import { reset } from '../features/auth/authSlice'
 
 const Dashboard = () => {
   const navigate = useNavigate()
@@ -58,7 +58,7 @@ const Dashboard = () => {
         {tickets.length > 0 ? (
           <div className='goals'>
             {tickets.map(ticket => (
-              <TicketItem key={ticket._id} ticket={ticket} />
+              <TicketItem key={ticket._id} ticket={ticket} user={user} />
             ))}
           </div>
         ) : (

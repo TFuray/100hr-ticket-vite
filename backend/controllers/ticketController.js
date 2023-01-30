@@ -14,7 +14,6 @@ const getTickets = asyncHandler(async (req, res) => {
   res.status(200).json(tickets)
 })
 
-
 // @desc    Set tickets
 // @route   POST /api/tickets
 const setTickets = asyncHandler(async (req, res) => {
@@ -39,8 +38,41 @@ const setTickets = asyncHandler(async (req, res) => {
 
 // @desc    Update tickets
 // @route   Put /api/tickets/:id
-const updateTicket = asyncHandler(async (req, res) => {
+// const updateTicket = asyncHandler(async (req, res) => {
+//   const ticket = await Ticket.findById(req.params.id)
+
+//   if (!ticket) {
+//     res.status(400)
+//     throw new Error('Ticket not found')
+//   }
+
+//   //check for user
+//   if (!req.user) {
+//     res.status(401)
+//     throw new Error('User not found')
+//   }
+
+//   // Make sure logged in user matches ticket user
+//   if (ticket.user.toString() !== req.user.id) {
+//     res.status(401)
+//     throw new Error('User not authorized')
+//   }
+
+//   const updatedTicket = await Ticket.findByIdAndUpdate(
+//     req.params.id,
+//     req.body,
+//     { new: true }
+//   )
+
+//   res.status(200).json(updatedTicket)
+// })
+
+// @desc    mark complete tickets
+// @route   Put /api/tickets/:id
+const completeTicket = asyncHandler(async (req, res) => {
   const ticket = await Ticket.findById(req.params.id)
+  const update = { status: 'closed' }
+  const filter = req.params.id
 
   if (!ticket) {
     res.status(400)
@@ -53,17 +85,15 @@ const updateTicket = asyncHandler(async (req, res) => {
     throw new Error('User not found')
   }
 
-  // Make sure logged in user matches ticket user
-  if (ticket.user.toString() !== req.user.id) {
-    res.status(401)
-    throw new Error('User not authorized')
-  }
+  // // Make sure logged in user matches ticket user
+  // if (ticket.user.toString() !== req.user.id) {
+  //   res.status(401)
+  //   throw new Error('User not authorized')
+  // }
 
-  const updatedTicket = await Ticket.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true }
-  )
+  const updatedTicket = await Ticket.findByIdAndUpdate(filter, update, {
+    new: true
+  })
 
   res.status(200).json(updatedTicket)
 })
@@ -97,6 +127,6 @@ const deleteTicket = asyncHandler(async (req, res) => {
 module.exports = {
   getTickets,
   setTickets,
-  updateTicket,
+  completeTicket,
   deleteTicket
 }

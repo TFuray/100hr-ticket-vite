@@ -14,9 +14,6 @@ const ticketSchema = mongoose.Schema({
     type: String,
     required: [true, "Pleae add Description"]
   },
-  project: {
-    type: String,
-  },
   assignedTo: {
     type: String,
     required: [true, "Anyone"],
@@ -28,9 +25,6 @@ const ticketSchema = mongoose.Schema({
   status: {
     type: String,
     default: "Open"
-  },
-  type: {
-  type: String
   },
 
 }, {
