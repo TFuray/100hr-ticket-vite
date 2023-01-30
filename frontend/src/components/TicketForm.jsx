@@ -81,25 +81,6 @@ const TicketForm = () => {
           />
         </div>
 
-        {/* <div className='form-group assigned'>
-          <label htmlFor='assignedTo'>Assigned To</label>
-          <select
-            onChange={e => setPriority(e.target.value)}
-            name='assignedTo'
-            id='assignedTo'
-          >
-            <option value='' disabled selected>
-             Assigned To 
-            </option> */}
-        {/* {user.map((user) => ( 
-              <option value={user.name}>{user.name}</option>
-            ))}  */}
-        {/* <option value='low'>Low</option>
-            <option value='medium'>Medium</option>
-            <option value='high'>High</option>
-          </select>
-        </div> */}
-
         <div className='form-group assigned'>
           <label htmlFor='assignedTo'>Assigned To</label>
           <input

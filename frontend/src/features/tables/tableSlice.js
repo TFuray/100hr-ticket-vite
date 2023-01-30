@@ -17,7 +17,8 @@ export const getTables = createAsyncThunk(
       const token = thunkAPI.getState().auth.user.token
       return await tableService.getTables(token)
     } catch (error) {
-      ;(error.response && error.response.data && error.response.message) ||
+      const message =
+        (error.response && error.response.data && error.response.message) ||
         error.message ||
         error.toString()
       return thunkAPI.rejectWithValue(message)

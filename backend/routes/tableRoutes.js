@@ -5,9 +5,8 @@ const{
   getTables,
   toggleOpen
 } = require('../controllers/tableController')
-const { protect } = require('../middleware/authMiddleware')
 
-router.route('/').get(protect, getTables)
+router.route('/').get( getTables)
 router.route('/:id').put(toggleOpen)
 
 module.exports = router
