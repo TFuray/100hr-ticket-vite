@@ -8,6 +8,7 @@ const{
 } = require('../controllers/tableController')
 
 router.route('/').get( getTables)
-router.route('/:id').put(toggleOpen).put(toggleClosed)
+router.route('/open/:id').put(toggleOpen)
+router.route('/closed/:id').put(toggleClosed)
 
 module.exports = router

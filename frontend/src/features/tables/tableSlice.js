@@ -43,6 +43,23 @@ export const toggleOpen = createAsyncThunk(
   }
 )
 
+// toggle close table
+export const toggleClosed = createAsyncThunk(
+  'table/toggleClosed',
+  async (id, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token
+      return await tableService.toggleOpen(id, token)
+    } catch (error) {
+      const message =
+        (error.response && error.response.data && error.response.message) ||
+        error.message ||
+        error.toString()
+      return thunkAPI.rejectWithValue(message)
+    }
+  }
+)
+
 export const tableSlice = createSlice({
   name: 'table',
   initialState,
@@ -70,11 +87,28 @@ export const tableSlice = createSlice({
       .addCase(toggleOpen.fulfilled, (state, action) => {
         state.isLoading = false
         state.isSuccess = true
+        // state.tables = [...state.tables, action.payload]
         state.tables = state.tables.filter(
           table => table._id !== action.payload.id
         )
       })
       .addCase(toggleOpen.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = true
+        state.message = action.payload
+      })
+      .addCase(toggleClosed.pending, state => {
+        state.isLoading = true
+      })
+      .addCase(toggleClosed.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isSuccess = true
+        // state.tables = [...state.tables, action.payload]
+        state.tables = state.tables.filter(
+          table => table._id !== action.payload.id
+        )
+      })
+      .addCase(toggleClosed.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload

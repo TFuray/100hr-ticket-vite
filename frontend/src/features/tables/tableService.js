@@ -20,12 +20,25 @@ const toggleOpen = async (tableId, token) => {
       Authorization: `Bearer ${token}`
     }
   }
-  const response = await axios.put(API_URL + tableId, config)
+  const response = await axios.put(API_URL + '/open/' + tableId, config)
+  return response.data
+}
+
+// Toggle open
+const toggleClosed = async (tableId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+  const response = await axios.put(API_URL + '/closed/' + tableId, config)
+  return response.data
 }
 
 const tableService = {
   getTables,
-  toggleOpen
+  toggleOpen,
+  toggleClosed
 }
 
 export default tableService
