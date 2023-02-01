@@ -58,7 +58,7 @@ const Login = () => {
       <section className='heading'>
         <h1>
         </h1>
-        <p>Be Part of a Team</p>
+        <p className='text-white' >Be Part of a Team</p>
       </section>
 
       <section className='form'>
