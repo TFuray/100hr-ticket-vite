@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch} from 'react-redux'
 import TableIcon from '../components/TableIcon'
+import PageHeading from '../components/PageHeading'
 import tableData from '../data/tables'
 import { useNavigate } from 'react-router-dom'
 
@@ -26,11 +27,9 @@ const TableMap = () => {
 
   return (
     <>
-      <section className='heading'>
-        <br />
-        <h1>Welcome {user && user.name}</h1>
-        <p className=''>Table Map</p>
-      </section>
+      <PageHeading
+        pageTitle={'Table Map'}
+      />
       <div className='grid grid-rows-5 grid-flow-col gap-8 place-items-center'>
         {tableList.map(table => (
           <div

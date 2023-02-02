@@ -1,10 +1,9 @@
+import PageHeading from "../components/PageHeading"
 
 const Orders = () => {
   return (
     <>
-      <section className="heading">
-        <h1>Welcome {}</h1>
-      </section> 
+      <PageHeading pageTitle="All Orders" />
     </>
   )
 }

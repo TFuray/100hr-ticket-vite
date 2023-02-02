@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import TicketForm from '../components/TicketForm'
 import TicketItem from '../components/TicketItem'
+import PageHeading from '../components/PageHeading'
 import AddButton from '../components/AddButton'
 import Spinner from '../components/Spinner'
 import { getTickets, reset } from '../features/tickets/ticketSlice'
@@ -41,9 +42,10 @@ const Dashboard = () => {
 
   return (
     <>
-      <section className='heading'>
-        <h1>Welcome {user && user.name}</h1>
-        <p>Tickets Dashboard</p>
+        <PageHeading 
+          pageTitle='Tickets Dashboard'
+          />
+        <section>
         <AddButton
           color={showTicketForm ? 'red' : 'green'}
           text={showTicketForm ? 'Close' : 'Add Ticket'}
