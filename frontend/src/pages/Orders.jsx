@@ -1,7 +1,11 @@
 
 const Orders = () => {
   return (
-    <div>Orders</div>
+    <>
+      <section className="heading">
+        <h1>Welcome {}</h1>
+      </section> 
+    </>
   )
 }
 

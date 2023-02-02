@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
+import { useSelector, useDispatch} from 'react-redux'
 import TableIcon from '../components/TableIcon'
 import tableData from '../data/tables'
 import { useNavigate } from 'react-router-dom'
 
 const TableMap = () => {
   const navigate = useNavigate()
+  const {user} = useSelector(state => state.auth)
   const [tableList, setTableList] = useState(tableData)
+
 
   function handleToggleOpen (id) {
     const newList = tableList.map(item => {
@@ -23,8 +26,11 @@ const TableMap = () => {
 
   return (
     <>
-      <h1></h1>
-      <h1 className='text-5xl mb-9'>Table Map</h1>
+      <section className='heading'>
+        <br />
+        <h1>Welcome {user && user.name}</h1>
+        <p className=''>Table Map</p>
+      </section>
       <div className='grid grid-rows-5 grid-flow-col gap-8 place-items-center'>
         {tableList.map(table => (
           <div
