@@ -30,7 +30,6 @@ const setTickets = asyncHandler(async (req, res) => {
     priority: req.body.priority,
     project: req.body.project,
     title: req.body.title,
-    type: req.body.type
   })
 
   res.status(200).json(ticket)
