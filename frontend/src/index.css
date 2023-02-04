@@ -1,13 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap'); */
 /* Box Model Hack */
 * {
   box-sizing: border-box;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 /* Clear fix hack */
 .clearfix:after {
@@ -107,7 +108,7 @@ h3 {
 }
 
 .goals {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
@@ -248,10 +249,10 @@ h3 {
 h2{
   margin-bottom: 0;
 }
-
+/* 
  div.form-group{
   margin-bottom: 0;
- }
+ } */
 
  label{
   position: absolute;

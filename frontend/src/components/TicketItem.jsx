@@ -5,7 +5,7 @@ const TicketItem = ({ ticket, user }) => {
   const dispatch = useDispatch()
 
   return (
-    <div className='card w-96 bg-neutral text-neutral-content'>
+    <div className='flex flex-col card w-80 bg-neutral text-neutral-content'>
       <div className='card-body items-center text-center'>
         <p className='text-xs'>
           {' '}

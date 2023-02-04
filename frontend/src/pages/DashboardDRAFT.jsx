@@ -52,50 +52,19 @@ const Dashboard = () => {
       </section>
 
       {showTicketForm && <TicketForm />}
-      <div className='flex justify-around'>
-        <section className='flex flex-col w-80 '>
-          <h2 className='flex justify-center text-2xl underline mb-4'>
-            Side Work: Open
-          </h2>
-          {tickets.length > 0 ? (
-            <div className='goals flex flex-col'>
-              {tickets.map(ticket => (
-                <TicketItem key={ticket._id} ticket={ticket} user={user} />
-              ))}
-            </div>
-          ) : (
-            <h3>No Open Tickets</h3>
-          )}
-        </section>
-        <section className='flex flex-col w-80 '>
-          <h2 className='flex justify-center text-2xl underline mb-4'>
-            Side Work: In-Progress
-          </h2>
-          {tickets.length > 0 ? (
-            <div className='goals flex flex-col'>
-              {tickets.map(ticket => (
-                <TicketItem key={ticket._id} ticket={ticket} user={user} />
-              ))}
-            </div>
-          ) : (
-            <h3>No Open Tickets</h3>
-          )}
-        </section>
-        <section className='flex flex-col w-80 '>
-          <h2 className='flex justify-center text-2xl underline mb-4'>
-            Side Work: Completed
-          </h2>
-          {tickets.length > 0 ? (
-            <div className='goals flex flex-col'>
-              {tickets.map(ticket => (
-                <TicketItem key={ticket._id} ticket={ticket} user={user} />
-              ))}
-            </div>
-          ) : (
-            <h3>No Open Tickets</h3>
-          )}
-        </section>
-      </div>
+
+      <section className='content'>
+        <h2>Open Tickets: All</h2>
+        {tickets.length > 0 ? (
+          <div className='goals'>
+            {tickets.map(ticket => (
+              <TicketItem key={ticket._id} ticket={ticket} user={user} />
+            ))}
+          </div>
+        ) : (
+          <h3>No Open Tickets</h3>
+        )}
+      </section>
     </>
   )
 }

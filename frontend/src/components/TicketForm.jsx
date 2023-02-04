@@ -13,27 +13,25 @@ const TicketForm = () => {
   const onSubmit = e => {
     e.preventDefault()
 
-    dispatch(
-      createTicket({ title, description, assignedTo, priority})
-    )
+    dispatch(createTicket({ title, description, assignedTo, priority }))
     setTitle('')
     setDescription('')
-    setProject('')
     setAssignedTo('')
     setPriority('')
-    setType('')
   }
 
   return (
     <section className='form'>
-      <h2 className='form'>New Ticket</h2>
-      <form onSubmit={onSubmit}>
-        <div className='form-group title'>
+      <h2 className='text-3xl'>New Ticket</h2>
+      <br />
+      <form className='flex flex-col gap-4' onSubmit={onSubmit}>
+        <div className='mb-2 block'>
           <label htmlFor='title'>Title</label>
           <input
             type='text'
             name='title'
             placeholder='Title'
+            className='input input-bordered w-full max-w-xs'
             id='title'
             value={title}
             onChange={e => setTitle(e.target.value)}
@@ -45,10 +43,11 @@ const TicketForm = () => {
             onChange={e => setPriority(e.target.value)}
             name='priority'
             id='priority'
+            className='input input-bordered w-full max-w-xs'
             placeholder='Priority'
-            value='Priority'
+            value={priority}
           >
-            <option value='Priority'>
+            <option value='Priority' defaultValue>
               Priority
             </option>
             <option value='low'>Low</option>
@@ -59,6 +58,7 @@ const TicketForm = () => {
         <div className='form-group description'>
           <label htmlFor='description'>Description</label>
           <textarea
+            className='textarea textarea-bordered textarea-lg w-full max-w-xs '
             type='text'
             placeholder='Description'
             name='description'
@@ -72,13 +72,19 @@ const TicketForm = () => {
           <label htmlFor='assignedTo'>Assigned To</label>
           <select
             type='text'
+            className = 'textarea textarea-bordered textarea-lg w-full max-w-xs '
+
             name='assignedTo'
             placeholder='Assigned To'
             id='assignedTo'
-            value='assignedTo'
+            value={assignedTo}
             onChange={e => setAssignedTo(e.target.value)}
           >
-          <option value="AssignedTo" disabled>Assigned To</option>
+            <option value='AssignedTo' defaultValue>
+              Assigned To
+            </option>
+            <option value="frontOfHouse">Front Of House</option>
+            <option value="backOfHouse">Back Of House</option>
           </select>
         </div>
 

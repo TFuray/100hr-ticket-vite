@@ -28,8 +28,8 @@ const setTickets = asyncHandler(async (req, res) => {
     assignedTo: req.body.assignedTo,
     description: req.body.description,
     priority: req.body.priority,
-    project: req.body.project,
     title: req.body.title,
+    status: 'Open'
   })
 
   res.status(200).json(ticket)
