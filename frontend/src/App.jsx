@@ -8,7 +8,6 @@ import Register from './pages/Register'
 import TableMap from './pages/TableMap'
 import Orders from './pages/Orders'
 
-
 function App () {
   return (
     <>

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@asseinfo/react-kanban": "^2.2.0",
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@reduxjs/toolkit": "^1.9.1",
@@ -20,6 +21,7 @@
     "daisyui": "^2.47.0",
     "flowbite": "^1.6.3",
     "flowbite-react": "^0.3.8",
+    "immutability-helper": "^3.1.1",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dnd": "^16.0.1",
