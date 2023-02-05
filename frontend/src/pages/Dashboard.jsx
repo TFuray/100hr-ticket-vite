@@ -74,7 +74,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <PageHeading pageTitle='Tickets Dashboard' />
+      <PageHeading pageTitle='Side Work Dashboard' />
       <section>
         <AddButton
           color={showTicketForm ? 'red' : 'green'}

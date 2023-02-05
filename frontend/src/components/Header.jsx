@@ -42,7 +42,7 @@ const Header = () => {
                     <Link to='/map'>Table Map</Link>
                   </li>
                   <li>
-                    <Link to="/">All Tickets</Link>
+                    <Link to="/">Side Work</Link>
                   </li>
                   <li>
                     <Link to='/orders'>All Orders </Link>
