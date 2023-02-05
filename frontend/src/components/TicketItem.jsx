@@ -1,7 +1,8 @@
 import {
   deleteTicket,
   completeTicket,
-  completedTicket
+  completedTicket,
+  reset
 } from '../features/tickets/ticketSlice'
 import { useDispatch } from 'react-redux'
 
@@ -64,7 +65,7 @@ const TicketItem = ({ ticket, user }) => {
   }
 
   return (
-    <div className='flex flex-col card w-80 bg-neutral text-neutral-content'>
+    <div className='flex flex-col card bg-info-content text-info'>
       <div className='card-body items-center text-center'>
         <p className='text-sm'>
           {' '}
@@ -74,7 +75,6 @@ const TicketItem = ({ ticket, user }) => {
         <h2 className='card-title'>{ticket.title}</h2>
         <p>{ticket.description}</p>
         <div className='card-actions justify-end'>
-          {/* <button className='btn btn-primary' onClick={() => dispatch(completeTicket(ticket._id))}>Completed</button> */}
           {renderButton()}
           {ticket.user == user._id ? (
             <button

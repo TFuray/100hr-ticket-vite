@@ -89,7 +89,7 @@ const TicketForm = () => {
         </div>
 
         <div className='form-group'>
-          <button className='btn btn-block ' type='submit'>
+          <button className='btn btn-primary w-4/12' type='submit'>
             Add Ticket
           </button>
         </div>
