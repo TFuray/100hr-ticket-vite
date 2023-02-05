@@ -49,7 +49,19 @@ const completeTicket = async (ticketId, token) => {
     }
   }
 
-  const response = await axios.put(API_URL + ticketId, config)
+  const response = await axios.put(API_URL + '/complete/'+ ticketId, config)
+
+  return response.data
+}
+
+const completedTicket = async (ticketId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+
+  const response = await axios.put(API_URL + "/completed/"+ ticketId, config)
 
   return response.data
 }
@@ -58,6 +70,7 @@ const ticketService = {
   createTicket,
   getTickets,
   deleteTicket,
+  completedTicket,
   completeTicket
 }
 

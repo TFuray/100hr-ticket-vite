@@ -70,7 +70,7 @@ const setTickets = asyncHandler(async (req, res) => {
 // @route   Put /api/tickets/:id
 const completeTicket = asyncHandler(async (req, res) => {
   const ticket = await Ticket.findById(req.params.id)
-  const update = { status: 'closed' }
+  const update = { status: 'inProgress' }
   const filter = req.params.id
 
   if (!ticket) {
@@ -78,17 +78,21 @@ const completeTicket = asyncHandler(async (req, res) => {
     throw new Error('Ticket not found')
   }
 
-  //check for user
-  if (!req.user) {
-    res.status(401)
-    throw new Error('User not found')
-  }
+  const updatedTicket = await Ticket.findByIdAndUpdate(filter, update, {
+    new: true
+  })
 
-  // // Make sure logged in user matches ticket user
-  // if (ticket.user.toString() !== req.user.id) {
-  //   res.status(401)
-  //   throw new Error('User not authorized')
-  // }
+  res.status(200).json(updatedTicket)
+})
+const completedTicket = asyncHandler(async (req, res) => {
+  const ticket = await Ticket.findById(req.params.id)
+  const update = { status: 'completed' }
+  const filter = req.params.id
+
+  if (!ticket) {
+    res.status(400)
+    throw new Error('Ticket not found')
+  }
 
   const updatedTicket = await Ticket.findByIdAndUpdate(filter, update, {
     new: true
@@ -127,5 +131,6 @@ module.exports = {
   getTickets,
   setTickets,
   completeTicket,
+  completedTicket,
   deleteTicket
 }
