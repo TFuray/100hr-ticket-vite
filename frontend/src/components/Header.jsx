@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout, reset } from '../features/auth/authSlice'
@@ -6,6 +7,21 @@ const Header = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user } = useSelector(state => state.auth)
+  const [theme, setTheme] = useState('dark')
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
+  const toggleDark = () => {
+    setTheme('dark')
+  }
+  const toggleLight = () => {
+    setTheme('light')
+  }
+
+  useEffect(() => {
+    document.querySelector('html').setAttribute('data-theme', theme)
+  }, [theme])
 
   const onLogout = () => {
     dispatch(logout())
@@ -22,6 +38,24 @@ const Header = () => {
       </div>
       <div className='flex-none'>
         <ul className='menu menu-horizontal px-1'>
+          <li>
+            <div className='btn-group'>
+              <input
+                type='radio'
+                name='options'
+                data-title='light'
+                className='btn'
+                onClick={toggleLight}
+              />
+              <input
+                type='radio'
+                name='options'
+                data-title='dark'
+                className='btn'
+                onClick={toggleDark}
+              />
+            </div>
+          </li>
           {user ? (
             <>
               <li tabIndex={0}>
@@ -42,7 +76,7 @@ const Header = () => {
                     <Link to='/map'>Table Map</Link>
                   </li>
                   <li>
-                    <Link to="/">Side Work</Link>
+                    <Link to='/'>Side Work</Link>
                   </li>
                   <li>
                     <Link to='/orders'>All Orders </Link>
@@ -56,14 +90,10 @@ const Header = () => {
           ) : (
             <>
               <li>
-                <Link to='/login'>
-                   Login
-                </Link>
+                <Link to='/login'>Login</Link>
               </li>
               <li>
-                <Link to='/register'>
-                  Register
-                </Link>
+                <Link to='/register'>Register</Link>
               </li>
             </>
           )}

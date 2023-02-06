@@ -86,7 +86,7 @@ const Dashboard = () => {
 
       <h2 className='text-3xl m-5'>
         <button
-          className={flip ? 'btn btn-info' : 'btn btn-outline btn-info'}
+          className={flip ? 'btn btn-active btn-secondary' : 'btn btn-outline btn-secondary'}
           onClick={showFront}
         >
           Front Of House
