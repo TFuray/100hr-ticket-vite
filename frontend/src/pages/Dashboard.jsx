@@ -69,6 +69,8 @@ const Dashboard = () => {
   const completedTicketsBack = tickets.filter(function (ticket) {
     return ticket.status === 'completed' && ticket.assignedTo === 'backOfHouse'
   })
+  
+  
 
   // ;<TicketItem key={ticket._id} ticket={ticket} user={user} />
 

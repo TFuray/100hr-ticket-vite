@@ -2,9 +2,8 @@ import {
   deleteTicket,
   completeTicket,
   completedTicket,
-  reset
 } from '../features/tickets/ticketSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 const TicketItem = ({ ticket, user }) => {
   const dispatch = useDispatch()
@@ -65,7 +64,7 @@ const TicketItem = ({ ticket, user }) => {
   }
 
   return (
-    <div className='flex flex-col card bg-neutral-content text-base-300'>
+    <div className='flex flex-col card bg-neutral text-neutral-content'>
       <div className='card-body items-center text-center'>
         <p className='text-sm'>
           {' '}
