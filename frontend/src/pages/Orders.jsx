@@ -4,6 +4,9 @@ const Orders = () => {
   return (
     <>
       <PageHeading pageTitle="All Orders" />
+      <div>
+        Orders
+      </div>
     </>
   )
 }
