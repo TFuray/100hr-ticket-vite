@@ -6,7 +6,7 @@ import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import TableMap from './pages/TableMap'
-import Orders from './pages/Orders'
+import ExampleAdmin from './pages/ExampleAdmin'
 
 function App () {
   return (
@@ -19,7 +19,7 @@ function App () {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/map' element={<TableMap />} />
-            <Route path='/orders' element={<Orders />} />
+            <Route path='/orders' element={<ExampleAdmin />} />
           </Routes>
         </div>
       </Router>
