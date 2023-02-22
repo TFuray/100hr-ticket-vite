@@ -4,6 +4,7 @@ import TableIcon from '../components/TableIcon'
 import PageHeading from '../components/PageHeading'
 import tableData from '../data/tables'
 import { useNavigate } from 'react-router-dom'
+import Sidebar from '../components/Sidebar'
 
 const TableMapDRAFT = () => {
   const navigate = useNavigate()
@@ -26,7 +27,6 @@ const TableMapDRAFT = () => {
 
   return (
     <>
-      <PageHeading pageTitle={'Table Map'} />
       <div className='grid grid-rows-3 grid-flow-col gap-5 place-items-center'>
         {tableList.map(table => (
           <div
@@ -43,7 +43,7 @@ const TableMapDRAFT = () => {
               open={table.open}
               seats={table.seats}
               table={table.table}
-              handleToggleOpen = { handleToggleOpen}
+              // handleToggleOpen = { handleToggleOpen}
             />
             {/* <div className='flex flex-col place-items-center '>
               <button className='custom-css btn ' style={{ width: '80%' }}>
@@ -58,6 +58,10 @@ const TableMapDRAFT = () => {
             </div> */}
           </div>
         ))}
+      </div>
+
+      <div className=''>
+        <Sidebar />
       </div>
     </>
   )
