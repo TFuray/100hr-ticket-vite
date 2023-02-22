@@ -42,29 +42,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <PageHeading pageTitle='Tickets Dashboard' />
-      <section>
-        <AddButton
-          color={showTicketForm ? 'red' : 'green'}
-          text={showTicketForm ? 'Close' : 'Add Ticket'}
-          onClick={() => setShowTicketForm(!showTicketForm)}
-        />
-      </section>
-
-      {showTicketForm && <TicketForm />}
-
-      <section className='content'>
-        <h2>Open Tickets: All</h2>
-        {tickets.length > 0 ? (
-          <div className='goals'>
-            {tickets.map(ticket => (
-              <TicketItem key={ticket._id} ticket={ticket} user={user} />
-            ))}
-          </div>
-        ) : (
-          <h3>No Open Tickets</h3>
-        )}
-      </section>
+      
     </>
   )
 }

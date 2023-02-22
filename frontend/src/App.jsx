@@ -6,7 +6,9 @@ import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import TableMap from './pages/TableMap'
-import ExampleAdmin from './pages/ExampleAdmin'
+import Orders from './pages/Orders'
+import DashboardDRAFT from './pages/DashboardDRAFT'
+import TableMapDRAFT from './pages/TableMapDRAFT'
 
 function App () {
   return (
@@ -15,11 +17,11 @@ function App () {
         <div className='container'>
           <Header />
           <Routes>
-            <Route path='/' element={<Dashboard />} />
+            <Route path='/' element={<DashboardDRAFT />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/map' element={<TableMap />} />
-            <Route path='/orders' element={<ExampleAdmin />} />
+            <Route path='/map' element={<TableMapDRAFT />} />
+            <Route path='/orders' element={<Orders />} />
           </Routes>
         </div>
       </Router>

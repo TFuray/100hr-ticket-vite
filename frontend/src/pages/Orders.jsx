@@ -1,13 +1,10 @@
-import PageHeading from "../components/PageHeading"
+import OrderTable from "../components/OrderTable"
 
 const Orders = () => {
   return (
-    <>
-      <PageHeading pageTitle="All Orders" />
-      <div>
-        Orders
-      </div>
-    </>
+    <div>
+      <OrderTable />
+    </div>
   )
 }
 
