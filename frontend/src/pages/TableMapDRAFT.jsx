@@ -4,7 +4,6 @@ import TableIcon from '../components/TableIcon'
 import PageHeading from '../components/PageHeading'
 import tableData from '../data/tables'
 import { useNavigate } from 'react-router-dom'
-import Sidebar from '../components/Sidebar'
 
 const TableMapDRAFT = () => {
   const navigate = useNavigate()
@@ -27,7 +26,7 @@ const TableMapDRAFT = () => {
 
   return (
     <>
-      <div className='grid grid-rows-3 grid-flow-col gap-5 place-items-center'>
+      <div className='grid grid-flow-col grid-rows-5 gap-5 place-items-center'>
         {tableList.map(table => (
           <div
             className='table'
@@ -61,7 +60,6 @@ const TableMapDRAFT = () => {
       </div>
 
       <div className=''>
-        <Sidebar />
       </div>
     </>
   )

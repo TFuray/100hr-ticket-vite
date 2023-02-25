@@ -30,7 +30,7 @@ const Header = () => {
   }
 
   return (
-    <header aria-label='Page Header'>
+    <header className='z-40' aria-label='Page Header'>
       <div class='mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:px-8'>
         <div class='sm:flex sm:items-center sm:justify-between'>
           <div class='text-center sm:text-left'>
@@ -38,8 +38,8 @@ const Header = () => {
               Welcome Back, {user && user.name}!
             </h1>
 
-            <p class='mt-1.5 text-sm text-gray-500'>
-              Let's write a new blog post! 🎉
+            <p class='mt-1.5 text-lg text-gray-500'>
+              The Whole House 
             </p>
           </div>
 
@@ -78,7 +78,7 @@ const Header = () => {
                         <path d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z' />
                       </svg>
                     </a>
-                    <ul className='p-2 bg-base-100'>
+                    <ul className='p-2 bg-base-100-opacity-60 z-50'>
                       <li>
                         <Link to='/map'>Table Map</Link>
                       </li>
