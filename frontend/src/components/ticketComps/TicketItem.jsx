@@ -2,13 +2,13 @@ import {
   deleteTicket,
   completeTicket,
   completedTicket,
-} from '../features/tickets/ticketSlice'
+} from '../../features/tickets/ticketSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 const TicketItem = ({ ticket, user }) => {
   const dispatch = useDispatch()
 
-  function renderButton () {
+  function renderButton() {
     if (ticket.status === 'Open') {
       return (
         <button

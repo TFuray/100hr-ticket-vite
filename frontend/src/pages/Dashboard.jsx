@@ -2,10 +2,10 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import TicketForm from '../components/TicketForm'
-import TicketItem from '../components/TicketItem'
+import TicketForm from '../components/ticketComps/TicketForm'
+import TicketItem from '../components/ticketComps/TicketItem'
 import PageHeading from '../components/PageHeading'
-import AddButton from '../components/AddButton'
+import AddButton from '../components/ticketComps/AddButton'
 import Spinner from '../components/Spinner'
 import { getTickets, reset } from '../features/tickets/ticketSlice'
 // import { reset } from '../features/auth/authSlice'
@@ -69,8 +69,8 @@ const Dashboard = () => {
   const completedTicketsBack = tickets.filter(function (ticket) {
     return ticket.status === 'completed' && ticket.assignedTo === 'backOfHouse'
   })
-  
-  
+
+
 
   // ;<TicketItem key={ticket._id} ticket={ticket} user={user} />
 

@@ -5,10 +5,9 @@ import Header from './components/Header'
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import TableMap from './pages/TableMap'
 import Orders from './pages/Orders'
 import DashboardDRAFT from './pages/DashboardDRAFT'
-import TableMapDRAFT from './pages/TableMapDRAFT'
+import TableMap from './pages/TableMap'
 
 function App () {
   return (
@@ -20,7 +19,7 @@ function App () {
             <Route path='/' element={<Dashboard />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/map' element={<TableMapDRAFT />} />
+            <Route path='/map' element={<TableMap />} />
             <Route path='/orders' element={<Orders />} />
           </Routes>
         </div>

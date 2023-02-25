@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { toggleOpen, toggleClosed, reset } from '../features/tables/tableSlice'
+import { toggleOpen, toggleClosed, reset } from '../../features/tables/tableSlice'
 
 const Table = ({ table, seats, _id, open }) => {
   const dispatch = useDispatch()

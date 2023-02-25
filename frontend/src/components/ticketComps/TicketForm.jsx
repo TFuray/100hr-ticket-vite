@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { createTicket } from '../features/tickets/ticketSlice'
+import { createTicket } from '../../features/tickets/ticketSlice'
 
 const TicketForm = () => {
   const [title, setTitle] = useState('')
@@ -72,7 +72,7 @@ const TicketForm = () => {
           <label htmlFor='assignedTo'>Assigned To</label>
           <select
             type='text'
-            className = 'textarea textarea-bordered textarea-lg w-full max-w-xs '
+            className='textarea textarea-bordered textarea-lg w-full max-w-xs '
 
             name='assignedTo'
             placeholder='Assigned To'
