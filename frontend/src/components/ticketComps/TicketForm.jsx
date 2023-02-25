@@ -21,12 +21,11 @@ const TicketForm = () => {
   }
 
   return (
-    <section className='form'>
-      <h2 className='text-3xl'>New Ticket</h2>
+    <section className='form grid justify-center'>
+      <h2 className='text-3xl mb-7 text-center'>New Ticket</h2>
       <br />
       <form className='flex flex-col gap-4' onSubmit={onSubmit}>
         <div className='mb-2 block'>
-          <label htmlFor='title'>Title</label>
           <input
             type='text'
             name='title'
@@ -38,7 +37,6 @@ const TicketForm = () => {
           />
         </div>
         <div className='form-group priority'>
-          <label htmlFor='priority'>Priority</label>
           <select
             onChange={e => setPriority(e.target.value)}
             name='priority'
@@ -56,7 +54,6 @@ const TicketForm = () => {
           </select>
         </div>
         <div className='form-group description'>
-          <label htmlFor='description'>Description</label>
           <textarea
             className='textarea textarea-bordered textarea-lg w-full max-w-xs '
             type='text'
@@ -69,7 +66,6 @@ const TicketForm = () => {
         </div>
 
         <div className='form-group assigned'>
-          <label htmlFor='assignedTo'>Assigned To</label>
           <select
             type='text'
             className='textarea textarea-bordered textarea-lg w-full max-w-xs '

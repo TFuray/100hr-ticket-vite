@@ -4,7 +4,7 @@ const Table = ({ open, table, seats, handleToggleOpen }) => {
   const [showModal, setShowModal] = useState(false)
 
   return (
-    <div class='group relative block h-64 sm:h-60 lg:w-72'>
+    <div class='group relative block h-64 sm:h-60 lg:w-72 '>
       <span class='absolute inset-0 border-2 border-dashed border-black'></span>
 
       <div

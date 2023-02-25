@@ -77,7 +77,7 @@ const Dashboard = () => {
   return (
     <>
       <PageHeading pageTitle='Side Work Dashboard' />
-      <section>
+      <section className='flex justify-center'>
         <AddButton
           color={showTicketForm ? 'red' : 'green'}
           text={showTicketForm ? 'Close' : 'Add Ticket'}
@@ -86,7 +86,7 @@ const Dashboard = () => {
       </section>
       {showTicketForm && <TicketForm />}
 
-      <h2 className='text-3xl m-5'>
+      <h2 className='flex justify-around text-3xl m-5'>
         <button
           className={flip ? 'btn btn-active btn-secondary' : 'btn btn-outline btn-secondary'}
           onClick={showFront}
@@ -103,8 +103,8 @@ const Dashboard = () => {
 
       {flip ? (
         <section className='frontHouse'>
-          <div className='flex gap-14 justify-around'>
-            <section className='flex-auto gap-14 flex-col '>
+          <div className='flex justify-around'>
+            <section className='flex flex-col w-80 '>
               <h2 className='flex justify-center text-xl underline mb-4'>
                 Side Work: Open
               </h2>
@@ -115,10 +115,10 @@ const Dashboard = () => {
                   ))}
                 </div>
               ) : (
-                <h3>No Open Tickets</h3>
+                <h3 className='flex justify-center'>No Open Tickets</h3>
               )}
             </section>
-            <section className='flex-auto gap-14 flex-col '>
+            <section className='flex flex-col w-80 '>
               <h2 className='flex justify-center text-xl underline mb-4'>
                 Side Work: In-Progress
               </h2>
@@ -129,10 +129,10 @@ const Dashboard = () => {
                   ))}
                 </div>
               ) : (
-                <h3>No In-Progress Tickets</h3>
+                <h3 className='flex justify-center'>No In-Progress Tickets</h3>
               )}
             </section>
-            <section className='flex-auto gap-14 flex-col '>
+            <section className='flex flex-col w-80 '>
               <h2 className='flex justify-center text-xl underline mb-4'>
                 Side Work: Completed
               </h2>
@@ -143,7 +143,7 @@ const Dashboard = () => {
                   ))}
                 </div>
               ) : (
-                <h3>No Completed Tickets</h3>
+                <h3 className='flex justify-center'>No Completed Tickets</h3>
               )}
             </section>
           </div>
@@ -162,10 +162,10 @@ const Dashboard = () => {
                   ))}
                 </div>
               ) : (
-                <h3>No Open Tickets</h3>
+                <h3 className='flex justify-center'>No Open Tickets</h3>
               )}
             </section>
-            <section className='flex flex-col w-80 '>
+            <section className='flex flex-col w-80'>
               <h2 className='flex justify-center text-xl underline mb-4'>
                 Side Work: In-Progress
               </h2>
@@ -176,7 +176,7 @@ const Dashboard = () => {
                   ))}
                 </div>
               ) : (
-                <h3>No In-Progress Tickets</h3>
+                <h3 className='flex justify-center'>No In-Progress Tickets</h3>
               )}
             </section>
             <section className='flex flex-col w-80 '>
@@ -190,7 +190,7 @@ const Dashboard = () => {
                   ))}
                 </div>
               ) : (
-                <h3>No Completed Tickets</h3>
+                <h3 className='flex justify-center'>No Completed Tickets</h3>
               )}
             </section>
           </div>
