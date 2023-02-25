@@ -1,15 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import Header from './components/Header'
+import Header from './components/generalComps/Header'
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Orders from './pages/Orders'
-import DashboardDRAFT from './pages/DashboardDRAFT'
 import TableMap from './pages/TableMap'
 
-function App () {
+function App() {
   return (
     <>
       <Router>

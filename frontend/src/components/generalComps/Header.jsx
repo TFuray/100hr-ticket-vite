@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { logout, reset } from '../features/auth/authSlice'
+import { logout, reset } from '../../features/auth/authSlice'
 
 const Header = () => {
   const navigate = useNavigate()
@@ -39,7 +39,7 @@ const Header = () => {
             </h1>
 
             <p class='mt-1.5 text-lg text-gray-500'>
-              The Whole House 
+              The Whole House
             </p>
           </div>
 
