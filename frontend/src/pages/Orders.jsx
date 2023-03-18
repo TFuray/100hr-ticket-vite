@@ -1,9 +1,9 @@
-import InputGroup6Presentation from "../components/orderComps/OrderTable"
+import SampleTicket from "../components/ticketComps/SampleTicket"
 
 const Orders = () => {
   return (
     <div>
-    
+   <SampleTicket /> 
     </div>
   )
 }

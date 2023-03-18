@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import TicketForm from '../components/ticketComps/TicketForm'
+import UpdateTicketForm from '../components/ticketComps/UpdateTicketForm'
 import TicketItem from '../components/ticketComps/TicketItem'
+import SampleTicket from '../components/ticketComps/SampleTicket'
 import PageHeading from '../components/generalComps/PageHeading'
 import AddButton from '../components/ticketComps/AddButton'
 import Spinner from '../components/generalComps/Spinner'
@@ -71,7 +73,6 @@ const Dashboard = () => {
   })
 
 
-
   // ;<TicketItem key={ticket._id} ticket={ticket} user={user} />
 
   return (
@@ -104,14 +105,14 @@ const Dashboard = () => {
       {flip ? (
         <section className='frontHouse'>
           <div className='flex justify-around'>
-            <section className='flex flex-col w-80 '>
+            <section className='flex flex-col w-80  '>
               <h2 className='flex justify-center text-xl underline mb-4'>
                 Side Work: Open
               </h2>
               {openTickets.length > 0 ? (
-                <div className='goals flex flex-col'>
+                <div className='goals flex flex-col gap-3'>
                   {openTickets.map(ticket => (
-                    <TicketItem key={ticket._id} ticket={ticket} user={user} />
+                    <SampleTicket key={ticket._id} ticket={ticket} user={user} />
                   ))}
                 </div>
               ) : (
