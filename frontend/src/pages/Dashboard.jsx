@@ -101,7 +101,7 @@ const Dashboard = () => {
         </div>
       </section>
 
-      <h2 className="flex justify-around text-3xl m-5">
+      <h2 className="flex justify-center text-3xl m-5">
         <button
           className={
             flip
@@ -112,6 +112,10 @@ const Dashboard = () => {
         >
           Front Of House
         </button>{" "}
+        <div
+          className="flex"
+          style={{ width: "100px" }}
+        ></div>
         <button
           className={!flip ? "btn btn-warning" : "btn btn-outline btn-warning"}
           onClick={showBack}
@@ -124,8 +128,9 @@ const Dashboard = () => {
         <section className="frontHouse">
           <div className="flex justify-around">
             <section className="flex flex-col w-80  ">
-              <h2 className="flex justify-center text-xl underline mb-4">
-                Side Work: Open
+              <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
+                Side Work: <br></br>
+                <span class="text-blue-600 dark:text-green-500">Open</span>
               </h2>
               {openTickets.length > 0 ? (
                 <div className="goals flex flex-col gap-3">
@@ -141,9 +146,13 @@ const Dashboard = () => {
                 <h3 className="flex justify-center">No Open Tickets</h3>
               )}
             </section>
+            <div className="divider lg:divider-horizontal"></div>
             <section className="flex flex-col w-80 ">
-              <h2 className="flex justify-center text-xl underline mb-4">
-                Side Work: In-Progress
+              <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
+                Side Work: <br></br>
+                <span class="text-blue-600 dark:text-yellow-500">
+                  In Progress
+                </span>
               </h2>
               {inProgressTickets.length > 0 ? (
                 <div className="goals flex flex-col">
@@ -159,9 +168,11 @@ const Dashboard = () => {
                 <h3 className="flex justify-center">No In-Progress Tickets</h3>
               )}
             </section>
+            <div className="divider lg:divider-horizontal"></div>
             <section className="flex flex-col w-80 ">
-              <h2 className="flex justify-center text-xl underline mb-4">
-                Side Work: Completed
+              <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
+                Side Work:{" "}
+                <span class="text-blue-600 dark:text-red-600">Completed</span>
               </h2>
               {completedTickets.length > 0 ? (
                 <div className="goals flex flex-col">
@@ -183,8 +194,9 @@ const Dashboard = () => {
         <section className="backHouse">
           <div className="flex justify-around">
             <section className="flex flex-col w-80 ">
-              <h2 className="flex justify-center text-xl underline mb-4">
-                Side Work: Open
+              <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
+                Side Work: <br></br>
+                <span class="text-blue-600 dark:text-green-500">Open</span>
               </h2>
               {openTicketsBack.length > 0 ? (
                 <div className="goals flex flex-col">
@@ -201,8 +213,11 @@ const Dashboard = () => {
               )}
             </section>
             <section className="flex flex-col w-80">
-              <h2 className="flex justify-center text-xl underline mb-4">
-                Side Work: In-Progress
+              <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
+                Side Work: <br></br>
+                <span class="text-blue-600 dark:text-yellow-500">
+                  In Progress
+                </span>
               </h2>
               {inProgressTicketsBack.length > 0 ? (
                 <div className="goals flex flex-col">
@@ -219,8 +234,9 @@ const Dashboard = () => {
               )}
             </section>
             <section className="flex flex-col w-80 ">
-              <h2 className="flex justify-center text-xl underline mb-4">
-                Side Work: Completed
+              <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
+                Side Work:{" "}
+                <span class="text-blue-600 dark:text-red-600">Completed</span>
               </h2>
               {completedTicketsBack.length > 0 ? (
                 <div className="goals flex flex-col">

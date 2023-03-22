@@ -4,8 +4,8 @@ const AddButton = ({showTicketForm, text, onClick}) => {
       style={{ width: "80px" }}
       className={
         showTicketForm
-          ? "text-black btn add btn-outline bg-red-600 btn-sm"
-          : "text-black btn add btn-outline bg-green-600 btn-sm"
+          ? "text-black btn btn-outline btn-error btn-sm"
+          : "text-black btn btn-outline btn-success btn-sm"
       } 
       onClick={onClick}
     >
