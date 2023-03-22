@@ -21,7 +21,7 @@ const UpdateTicketForm = () => {
   }
   return (
     <div>
-      <section className="max-w-4xl p-6 mx-auto bg-indigo-600 rounded-md shadow-md dark:bg-neutral mt-20">
+      <section className="max-w-4xl p-6 mx-auto bg-indigo-600 rounded-md shadow-md dark:bg-neutral mt-5">
         <h1 className="text-xl font-bold text-white capitalize dark:text-white">
           Create Ticket
         </h1>
@@ -81,7 +81,7 @@ const UpdateTicketForm = () => {
           <div className="flex justify-end mt-6">
             <button
               type="submit"
-              className="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-pink-500 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600"
+              className="px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-primary rounded-md hover:bg-primary-focus focus:outline-none focus:bg-gray-600"
             >
               Save
             </button>

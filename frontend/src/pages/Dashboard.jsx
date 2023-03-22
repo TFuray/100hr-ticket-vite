@@ -1,25 +1,25 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import TicketForm from '../components/ticketComps/TicketForm'
-import TicketTable from '../components/ticketComps/TicketTable'
-import UpdateTicketForm from '../components/ticketComps/UpdateTicketForm'
-import TicketItem from '../components/ticketComps/TicketItem'
-import SampleTicket from '../components/ticketComps/SampleTicket'
-import PageHeading from '../components/generalComps/PageHeading'
-import AddButton from '../components/ticketComps/AddButton'
-import Spinner from '../components/generalComps/Spinner'
-import { getTickets, reset } from '../features/tickets/ticketSlice'
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
+import TicketForm from "../components/ticketComps/TicketForm"
+import TicketTable from "../components/ticketComps/TicketTable"
+import UpdateTicketForm from "../components/ticketComps/UpdateTicketForm"
+import TicketItem from "../components/ticketComps/TicketItem"
+import SampleTicket from "../components/ticketComps/SampleTicket"
+import PageHeading from "../components/generalComps/PageHeading"
+import AddButton from "../components/ticketComps/AddButton"
+import Spinner from "../components/generalComps/Spinner"
+import { getTickets, reset } from "../features/tickets/ticketSlice"
 // import { reset } from '../features/auth/authSlice'
 
 const Dashboard = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const { user } = useSelector(state => state.auth)
+  const { user } = useSelector((state) => state.auth)
   const { tickets, isLoading, isError, message } = useSelector(
-    state => state.tickets
+    (state) => state.tickets
   )
 
   const [showTicketForm, setShowTicketForm] = useState(false)
@@ -30,7 +30,7 @@ const Dashboard = () => {
       console.log(message)
     }
     if (!user) {
-      navigate('/login')
+      navigate("/login")
     } else {
       dispatch(getTickets())
     }
@@ -48,64 +48,72 @@ const Dashboard = () => {
   const showBack = () => setFlip(false)
 
   const openTickets = tickets.filter(function (ticket) {
-    return ticket.status === 'Open' && ticket.assignedTo === 'frontOfHouse'
+    return ticket.status === "Open" && ticket.assignedTo === "frontOfHouse"
   })
 
   const inProgressTickets = tickets.filter(function (ticket) {
     return (
-      ticket.status === 'inProgress' && ticket.assignedTo === 'frontOfHouse'
+      ticket.status === "inProgress" && ticket.assignedTo === "frontOfHouse"
     )
   })
 
   const completedTickets = tickets.filter(function (ticket) {
-    return ticket.status === 'completed' && ticket.assignedTo === 'frontOfHouse'
+    return ticket.status === "completed" && ticket.assignedTo === "frontOfHouse"
   })
 
   const openTicketsBack = tickets.filter(function (ticket) {
-    return ticket.status === 'Open' && ticket.assignedTo === 'backOfHouse'
+    return ticket.status === "Open" && ticket.assignedTo === "backOfHouse"
   })
 
   const inProgressTicketsBack = tickets.filter(function (ticket) {
-    return ticket.status === 'inProgress' && ticket.assignedTo === 'backOfHouse'
+    return ticket.status === "inProgress" && ticket.assignedTo === "backOfHouse"
   })
 
   const completedTicketsBack = tickets.filter(function (ticket) {
-    return ticket.status === 'completed' && ticket.assignedTo === 'backOfHouse'
+    return ticket.status === "completed" && ticket.assignedTo === "backOfHouse"
   })
-
-
-  // ;<TicketItem key={ticket._id} ticket={ticket} user={user} />
 
   return (
     <>
-      <PageHeading pageTitle='Side Work Dashboard' />
-      <section className='flex justify-center'>
-        {/* <AddButton
+      {/* <AddButton
           color={showTicketForm ? 'red' : 'green'}
           text={showTicketForm ? 'Close' : 'Add Ticket'}
           onClick={() => setShowTicketForm(!showTicketForm)}
-        /> */}
+        />  */}
+      <PageHeading pageTitle="Side Work Dashboard" />
+      <section className="flex justify-center">
         <div className="collapse">
-          <input type="checkbox" />
-          <div className="collapse-title text-xl font-medium">
-            Add Ticket
+          <input
+            type="checkbox"
+            onClick={() => setShowTicketForm(!showTicketForm)}
+          />
+          <div className="collapse-title text-xl font-medium justify-end flex">
+            {/* {showTicketForm ? "Add Ticket" : "Close"} */}
+            <AddButton
+              showTicketForm={showTicketForm}
+              text={showTicketForm ? "Close" : "Add Ticket"}
+              onClick={() => setShowTicketForm(!showTicketForm)}
+            />
           </div>
           <div className="collapse-content">
             <UpdateTicketForm />
           </div>
         </div>
       </section>
-      {showTicketForm && <TicketForm />}
 
-      <h2 className='flex justify-around text-3xl m-5'>
+      <h2 className="flex justify-around text-3xl m-5">
         <button
-          className={flip ? 'btn btn-active btn-secondary' : 'btn btn-outline btn-secondary'}
+          className={
+            flip
+              ? "btn btn-active btn-secondary"
+              : "btn btn-outline btn-secondary"
+          }
           onClick={showFront}
         >
           Front Of House
-        </button>{' '}
+        </button>{" "}
         <button
-          className={!flip ? 'btn btn-warning' : 'btn btn-outline btn-warning'}
+          className={!flip ? "btn btn-warning" : "btn btn-outline btn-warning"}
           onClick={showBack}
         >
           Back Of House
@@ -113,95 +121,119 @@ const Dashboard = () => {
       </h2>
 
       {flip ? (
-        <section className='frontHouse'>
-          <div className='flex justify-around'>
-            <section className='flex flex-col w-80  '>
-              <h2 className='flex justify-center text-xl underline mb-4'>
+        <section className="frontHouse">
+          <div className="flex justify-around">
+            <section className="flex flex-col w-80  ">
+              <h2 className="flex justify-center text-xl underline mb-4">
                 Side Work: Open
               </h2>
               {openTickets.length > 0 ? (
-                <div className='goals flex flex-col gap-3'>
-                  {openTickets.map(ticket => (
-                    <TicketItem key={ticket._id} ticket={ticket} user={user} />
+                <div className="goals flex flex-col gap-3">
+                  {openTickets.map((ticket) => (
+                    <TicketItem
+                      key={ticket._id}
+                      ticket={ticket}
+                      user={user}
+                    />
                   ))}
                 </div>
               ) : (
-                <h3 className='flex justify-center'>No Open Tickets</h3>
+                <h3 className="flex justify-center">No Open Tickets</h3>
               )}
             </section>
-            <section className='flex flex-col w-80 '>
-              <h2 className='flex justify-center text-xl underline mb-4'>
+            <section className="flex flex-col w-80 ">
+              <h2 className="flex justify-center text-xl underline mb-4">
                 Side Work: In-Progress
               </h2>
               {inProgressTickets.length > 0 ? (
-                <div className='goals flex flex-col'>
-                  {inProgressTickets.map(ticket => (
-                    <TicketItem key={ticket._id} ticket={ticket} user={user} />
+                <div className="goals flex flex-col">
+                  {inProgressTickets.map((ticket) => (
+                    <TicketItem
+                      key={ticket._id}
+                      ticket={ticket}
+                      user={user}
+                    />
                   ))}
                 </div>
               ) : (
-                <h3 className='flex justify-center'>No In-Progress Tickets</h3>
+                <h3 className="flex justify-center">No In-Progress Tickets</h3>
               )}
             </section>
-            <section className='flex flex-col w-80 '>
-              <h2 className='flex justify-center text-xl underline mb-4'>
+            <section className="flex flex-col w-80 ">
+              <h2 className="flex justify-center text-xl underline mb-4">
                 Side Work: Completed
               </h2>
               {completedTickets.length > 0 ? (
-                <div className='goals flex flex-col'>
-                  {completedTickets.map(ticket => (
-                    <TicketItem key={ticket._id} ticket={ticket} user={user} />
+                <div className="goals flex flex-col">
+                  {completedTickets.map((ticket) => (
+                    <TicketItem
+                      key={ticket._id}
+                      ticket={ticket}
+                      user={user}
+                    />
                   ))}
                 </div>
               ) : (
-                <h3 className='flex justify-center'>No Completed Tickets</h3>
+                <h3 className="flex justify-center">No Completed Tickets</h3>
               )}
             </section>
           </div>
         </section>
       ) : (
-        <section className='backHouse'>
-          <div className='flex justify-around'>
-            <section className='flex flex-col w-80 '>
-              <h2 className='flex justify-center text-xl underline mb-4'>
+        <section className="backHouse">
+          <div className="flex justify-around">
+            <section className="flex flex-col w-80 ">
+              <h2 className="flex justify-center text-xl underline mb-4">
                 Side Work: Open
               </h2>
               {openTicketsBack.length > 0 ? (
-                <div className='goals flex flex-col'>
-                  {openTicketsBack.map(ticket => (
-                    <TicketItem key={ticket._id} ticket={ticket} user={user} />
+                <div className="goals flex flex-col">
+                  {openTicketsBack.map((ticket) => (
+                    <TicketItem
+                      key={ticket._id}
+                      ticket={ticket}
+                      user={user}
+                    />
                   ))}
                 </div>
               ) : (
-                <h3 className='flex justify-center'>No Open Tickets</h3>
+                <h3 className="flex justify-center">No Open Tickets</h3>
               )}
             </section>
-            <section className='flex flex-col w-80'>
-              <h2 className='flex justify-center text-xl underline mb-4'>
+            <section className="flex flex-col w-80">
+              <h2 className="flex justify-center text-xl underline mb-4">
                 Side Work: In-Progress
               </h2>
               {inProgressTicketsBack.length > 0 ? (
-                <div className='goals flex flex-col'>
-                  {inProgressTicketsBack.map(ticket => (
-                    <TicketItem key={ticket._id} ticket={ticket} user={user} />
+                <div className="goals flex flex-col">
+                  {inProgressTicketsBack.map((ticket) => (
+                    <TicketItem
+                      key={ticket._id}
+                      ticket={ticket}
+                      user={user}
+                    />
                   ))}
                 </div>
               ) : (
-                <h3 className='flex justify-center'>No In-Progress Tickets</h3>
+                <h3 className="flex justify-center">No In-Progress Tickets</h3>
               )}
             </section>
-            <section className='flex flex-col w-80 '>
-              <h2 className='flex justify-center text-xl underline mb-4'>
+            <section className="flex flex-col w-80 ">
+              <h2 className="flex justify-center text-xl underline mb-4">
                 Side Work: Completed
               </h2>
               {completedTicketsBack.length > 0 ? (
-                <div className='goals flex flex-col'>
-                  {completedTicketsBack.map(ticket => (
-                    <TicketItem key={ticket._id} ticket={ticket} user={user} />
+                <div className="goals flex flex-col">
+                  {completedTicketsBack.map((ticket) => (
+                    <TicketItem
+                      key={ticket._id}
+                      ticket={ticket}
+                      user={user}
+                    />
                   ))}
                 </div>
               ) : (
-                <h3 className='flex justify-center'>No Completed Tickets</h3>
+                <h3 className="flex justify-center">No Completed Tickets</h3>
               )}
             </section>
           </div>
