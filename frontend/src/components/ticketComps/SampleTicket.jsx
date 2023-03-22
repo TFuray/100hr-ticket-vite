@@ -2,41 +2,72 @@ import {
   deleteTicket,
   completeTicket,
   completedTicket,
-} from '../../features/tickets/ticketSlice'
-import { useDispatch, useSelector } from 'react-redux'
+} from "../../features/tickets/ticketSlice"
+import { useDispatch, useSelector } from "react-redux"
 
 const SampleTicket = ({ ticket, user }) => {
+  const dispatch = useDispatch()
+  function renderButton() {
+    if (ticket.status === "Open") {
+      return (
+        <button
+          onClick={() => dispatch(completeTicket(ticket._id))}
+          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Start Ticket
+          <svg
+            aria-hidden="true"
+            className="w-4 h-4 ml-2 -mr-1"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
+      )
+    }
+    if (ticket.status === "inProgress") {
+      return (
+        <button
+          className="btn btn-ghost"
+          onClick={() => dispatch(completedTicket(ticket._id))}
+        ></button>
+      )
+    } else {
+      return (
+        <svg
+          className="w-8"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 576 512"
+        >
+          <path
+            aria-hidden="true"
+            fill="yellow"
+            d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"
+          />
+        </svg>
+      )
+    }
+  }
+
   return (
-    <div className="w-full max-w-xs p-6 overflow-hidden bg-white shadow-lg rounded-xl dark:bg-gray-800">
-      <div className="flex flex-col items-center justify-between md:flex-row">
-        <div className="flex items-center justify-start flex-grow w-full">
-          
-          <div className="flex flex-col items-start ml-4">
-            <span className="text-gray-700 dark:text-white">
-              {ticket.title}
-            </span>
-            <span className="text-sm font-light text-gray-400 dark:text-gray-300">
-              {new Date(ticket.createdAt).toLocaleString('en-US')}
-            </span>
-          </div>
-        </div>
-        <div className="flex-none hidden md:block ">
-          <span className="w-full px-3 py-1 text-sm text-white bg-blue-500 rounded-full">
-           {ticket.status} 
-          </span>
-        </div>
-      </div>
-      
-      <p className="text-sm font-normal text-gray-400">
+    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <a href="#">
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          {ticket.title}
+        </h5>
+      </a>
+      <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
         {ticket.description}
       </p>
-  
-      <button type="button" className="py-2 px-4  bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-        Apply for this Job
-      </button>
+      {renderButton()} 
     </div>
   )
 }
-
 
 export default SampleTicket

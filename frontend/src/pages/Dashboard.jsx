@@ -135,7 +135,7 @@ const Dashboard = () => {
               {openTickets.length > 0 ? (
                 <div className="goals flex flex-col gap-3">
                   {openTickets.map((ticket) => (
-                    <TicketItem
+                    <SampleTicket
                       key={ticket._id}
                       ticket={ticket}
                       user={user}
@@ -201,7 +201,7 @@ const Dashboard = () => {
               {openTicketsBack.length > 0 ? (
                 <div className="goals flex flex-col">
                   {openTicketsBack.map((ticket) => (
-                    <TicketItem
+                    <SampleTicket
                       key={ticket._id}
                       ticket={ticket}
                       user={user}
