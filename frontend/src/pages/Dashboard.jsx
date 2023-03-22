@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import TicketForm from '../components/ticketComps/TicketForm'
+import TicketTable from '../components/ticketComps/TicketTable'
 import UpdateTicketForm from '../components/ticketComps/UpdateTicketForm'
 import TicketItem from '../components/ticketComps/TicketItem'
 import SampleTicket from '../components/ticketComps/SampleTicket'
@@ -79,11 +80,20 @@ const Dashboard = () => {
     <>
       <PageHeading pageTitle='Side Work Dashboard' />
       <section className='flex justify-center'>
-        <AddButton
+        {/* <AddButton
           color={showTicketForm ? 'red' : 'green'}
           text={showTicketForm ? 'Close' : 'Add Ticket'}
           onClick={() => setShowTicketForm(!showTicketForm)}
-        />
+        /> */}
+        <div className="collapse">
+          <input type="checkbox" />
+          <div className="collapse-title text-xl font-medium">
+            Add Ticket
+          </div>
+          <div className="collapse-content">
+            <UpdateTicketForm />
+          </div>
+        </div>
       </section>
       {showTicketForm && <TicketForm />}
 
@@ -112,7 +122,7 @@ const Dashboard = () => {
               {openTickets.length > 0 ? (
                 <div className='goals flex flex-col gap-3'>
                   {openTickets.map(ticket => (
-                    <SampleTicket key={ticket._id} ticket={ticket} user={user} />
+                    <TicketItem key={ticket._id} ticket={ticket} user={user} />
                   ))}
                 </div>
               ) : (

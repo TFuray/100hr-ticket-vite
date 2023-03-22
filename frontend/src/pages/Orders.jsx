@@ -3,7 +3,7 @@ import SampleTicket from "../components/ticketComps/SampleTicket"
 const Orders = () => {
   return (
     <div>
-   <SampleTicket /> 
+    orders
     </div>
   )
 }
