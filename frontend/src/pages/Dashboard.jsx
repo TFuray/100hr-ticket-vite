@@ -128,9 +128,9 @@ const Dashboard = () => {
         <section className="frontHouse">
           <div className="flex justify-around">
             <section className="flex flex-col w-80  ">
-              <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
+              <h2 class="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
                 Side Work: <br></br>
-                <span class="text-blue-600 dark:text-green-500">Open</span>
+                <span class="text-green-500">Open</span>
               </h2>
               {openTickets.length > 0 ? (
                 <div className="goals flex flex-col gap-3">
@@ -148,7 +148,7 @@ const Dashboard = () => {
             </section>
             <div className="divider lg:divider-horizontal"></div>
             <section className="flex flex-col w-80 ">
-              <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
+              <h2 class="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
                 Side Work: <br></br>
                 <span class="text-blue-600 dark:text-yellow-500">
                   In Progress
@@ -170,7 +170,7 @@ const Dashboard = () => {
             </section>
             <div className="divider lg:divider-horizontal"></div>
             <section className="flex flex-col w-80 ">
-              <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
+              <h2 class="mb-4 text-4xl font-extrabold text-center leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
                 Side Work:{" "}
                 <span class="text-blue-600 dark:text-red-600">Completed</span>
               </h2>
@@ -194,7 +194,7 @@ const Dashboard = () => {
         <section className="backHouse">
           <div className="flex justify-around">
             <section className="flex flex-col w-80 ">
-              <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
+              <h2 class="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
                 Side Work: <br></br>
                 <span class="text-blue-600 dark:text-green-500">Open</span>
               </h2>
@@ -212,8 +212,9 @@ const Dashboard = () => {
                 <h3 className="flex justify-center">No Open Tickets</h3>
               )}
             </section>
+            <div className="divider lg:divider-horizontal"></div>
             <section className="flex flex-col w-80">
-              <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
+              <h2 class="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
                 Side Work: <br></br>
                 <span class="text-blue-600 dark:text-yellow-500">
                   In Progress
@@ -233,8 +234,9 @@ const Dashboard = () => {
                 <h3 className="flex justify-center">No In-Progress Tickets</h3>
               )}
             </section>
+            <div className="divider lg:divider-horizontal"></div>
             <section className="flex flex-col w-80 ">
-              <h2 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
+              <h2 class="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
                 Side Work:{" "}
                 <span class="text-blue-600 dark:text-red-600">Completed</span>
               </h2>

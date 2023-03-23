@@ -55,7 +55,7 @@ const Login = () => {
 
   return (
     <div className='flex justify-center'>
-      <div className='card bg-primary w-80 h-80 place-content-center shadow-lg'>
+      <div className='card bg-primary opacity-75 w-80 h-80 place-content-center shadow-lg'>
         <section className='text-center'>
           <h3 className='text-white mb-2 text-xl' >Login</h3>
         </section>
