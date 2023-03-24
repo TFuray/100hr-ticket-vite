@@ -21,7 +21,7 @@ const UpdateTicketForm = () => {
   }
   return (
     <div>
-      <section className="max-w-4xl p-6 mx-auto bg-indigo-600 rounded-md shadow-md dark:bg-neutral mt-5">
+      <section className="max-w-4xl p-6 mx-auto bg-indigo-600 rounded-md shadow-md dark:bg-neutral opacity-70 mt-5">
         <h1 className="text-xl font-bold text-white capitalize dark:text-white">
           Create Ticket
         </h1>
