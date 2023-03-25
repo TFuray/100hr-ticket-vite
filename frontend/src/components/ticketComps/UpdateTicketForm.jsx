@@ -5,8 +5,8 @@ import { createTicket } from "../../features/tickets/ticketSlice"
 const UpdateTicketForm = () => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
-  const [assignedTo, setAssignedTo] = useState("")
-  const [priority, setPriority] = useState("")
+  const [assignedTo, setAssignedTo] = useState("frontOfHouse")
+  const [priority, setPriority] = useState("low")
 
   const dispatch = useDispatch()
 
@@ -31,6 +31,7 @@ const UpdateTicketForm = () => {
               <label className="text-white dark:text-gray-200">Title</label>
               <input
                 id="title"
+                name="title"
                 type="text"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
                 value={title}
@@ -42,10 +43,11 @@ const UpdateTicketForm = () => {
               <select
                 id="priority"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                name="priority"
                 value={priority}
                 onChange={(e) => setPriority(e.target.value)}
               >
-                <option value="low">Low</option>
+                <option defaultValue value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
               </select>
@@ -55,7 +57,8 @@ const UpdateTicketForm = () => {
                 Description
               </label>
               <textarea
-                id="assignedTo"
+                id="description"
+                name="Description"
                 type="textarea"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
                 value={description}
@@ -68,11 +71,12 @@ const UpdateTicketForm = () => {
               </label>
               <select
                 id="assignedTo"
+                name="assignedTo"
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
                 value={assignedTo}
                 onChange={(e) => setAssignedTo(e.target.value)}
               >
-                <option value="frontOfHouse">Front Of House</option>
+                <option defaultValue value="frontOfHouse">Front Of House</option>
                 <option value="backOfHouse">Back Of House</option>
               </select>
             </div>

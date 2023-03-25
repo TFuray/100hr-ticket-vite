@@ -1,9 +1,9 @@
-import SampleTicket from "../components/ticketComps/SampleTicket"
+import TicketItem from "../components/ticketComps/TicketItem"
 
 const Orders = () => {
   return (
     <div>
-    orders
+    <TicketItem />
     </div>
   )
 }
