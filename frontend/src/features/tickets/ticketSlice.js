@@ -1,17 +1,17 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import ticketService from '../tickets/ticketService'
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
+import ticketService from "../tickets/ticketService"
 
 const initialState = {
   tickets: [],
   isError: false,
   isSuccess: false,
   isLoading: false,
-  message: ''
+  message: "",
 }
 
 // Create new ticket
 export const createTicket = createAsyncThunk(
-  'tickets/create',
+  "tickets/create",
   async (ticketData, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -28,7 +28,7 @@ export const createTicket = createAsyncThunk(
 
 // Get user tickets
 export const getTickets = createAsyncThunk(
-  'tickets/getAll',
+  "tickets/getAll",
   async (_, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -45,7 +45,7 @@ export const getTickets = createAsyncThunk(
 
 // Delete user ticket
 export const deleteTicket = createAsyncThunk(
-  'tickets/delete',
+  "tickets/delete",
   async (id, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -62,7 +62,7 @@ export const deleteTicket = createAsyncThunk(
 
 // Complete user ticket
 export const completeTicket = createAsyncThunk(
-  'tickets/complete',
+  "tickets/complete",
   async (id, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -78,7 +78,7 @@ export const completeTicket = createAsyncThunk(
 )
 
 export const completedTicket = createAsyncThunk(
-  'tickets/completed',
+  "tickets/completed",
   async (id, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token
@@ -94,14 +94,14 @@ export const completedTicket = createAsyncThunk(
 )
 
 export const ticketSlice = createSlice({
-  name: 'ticket',
+  name: "ticket",
   initialState,
   reducers: {
-    reset: state => initialState
+    reset: (state) => initialState,
   },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
-      .addCase(createTicket.pending, state => {
+      .addCase(createTicket.pending, (state) => {
         state.isLoading = true
       })
       .addCase(createTicket.fulfilled, (state, action) => {
@@ -114,7 +114,7 @@ export const ticketSlice = createSlice({
         state.isError = true
         state.message = action.payload
       })
-      .addCase(getTickets.pending, state => {
+      .addCase(getTickets.pending, (state) => {
         state.isLoading = true
       })
       .addCase(getTickets.fulfilled, (state, action) => {
@@ -127,14 +127,14 @@ export const ticketSlice = createSlice({
         state.isError = true
         state.message = action.payload
       })
-      .addCase(deleteTicket.pending, state => {
+      .addCase(deleteTicket.pending, (state) => {
         state.isLoading = true
       })
       .addCase(deleteTicket.fulfilled, (state, action) => {
         state.isLoading = false
         state.isSuccess = true
         state.tickets = state.tickets.filter(
-          ticket => ticket._id !== action.payload.id
+          (ticket) => ticket._id !== action.payload.id
         )
       })
       .addCase(deleteTicket.rejected, (state, action) => {
@@ -142,36 +142,34 @@ export const ticketSlice = createSlice({
         state.isError = true
         state.message = action.payload
       })
-      .addCase(completeTicket.pending, state => {
+      .addCase(completeTicket.pending, (state) => {
         state.isLoading = true
       })
-      
+
       .addCase(completeTicket.fulfilled, (state, action) => {
         state.isLoading = false
         state.isSuccess = true
-        state.tickets.map(t => (t, action))
-        // state.tickets.push(action.payload)
+        state.message = action.payload
       })
       .addCase(completeTicket.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
       })
-      .addCase(completedTicket.pending, state => {
+      .addCase(completedTicket.pending, (state) => {
         state.isLoading = true
       })
       .addCase(completedTicket.fulfilled, (state, action) => {
         state.isLoading = false
         state.isSuccess = true
-        state.tickets.map(t => (t, action))
-        // state.tickets.push(action.payload)
+        state.message = action.payload
       })
       .addCase(completedTicket.rejected, (state, action) => {
         state.isLoading = false
         state.isError = true
         state.message = action.payload
       })
-  }
+  },
 })
 
 export const { reset } = ticketSlice.actions

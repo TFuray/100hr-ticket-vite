@@ -9,22 +9,32 @@ import { useDispatch, useSelector } from "react-redux"
 const SampleTicket = ({ ticket, user }) => {
   const dispatch = useDispatch()
 
+  const onClick = () => {
+    if (ticket.status == 'Open') {
+      dispatch(completeTicket(ticket._id))
+      dispatch(reset)
+    }
+    else if (ticket.status == 'inProgress') {
+      dispatch(completedTicket(ticket._id))
+    }
+  }
+
   function renderButton() {
     if (ticket.status === "Open") {
       return (
         <button
-          onClick={() => dispatch(completeTicket(ticket._id))}
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 "
+          onClick={onClick}
+          className="inline-flex items-center px-3 py-2 text-md font-bold font-medium text-center text-black bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 "
         >
-          Start Ticket
+          Start
         </button>
       )
     }
     if (ticket.status === "inProgress") {
       return (
         <button
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-yellow-500 dark:hover:bg-yellow-600 dark:focus:ring-yellow-300 "
-          onClick={() => dispatch(completedTicket(ticket._id))}
+          className="inline-flex items-center px-3  py-2 text-md font-bold font-medium text-center text-black bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-yellow-500 dark:hover:bg-yellow-600 dark:focus:ring-yellow-300 "
+          onClick={onClick}
         >
           Completed
         </button>
@@ -33,7 +43,7 @@ const SampleTicket = ({ ticket, user }) => {
   }
 
   function deleteButton() {
-    
+   null 
   }
 
   return (
