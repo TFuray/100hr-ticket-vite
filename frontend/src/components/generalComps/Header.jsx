@@ -7,21 +7,21 @@ const Header = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const { user } = useSelector(state => state.auth)
-  const [theme, setTheme] = useState('luxury')
+  const [theme, setTheme] = useState('buisness')
 
-  const toggleTheme = () => {
-    setTheme(theme === 'luxury' ? 'light' : 'luxury')
-  }
-  const toggleLuxury = () => {
-    setTheme('luxury')
-  }
-  const toggleLight = () => {
-    setTheme('light')
-  }
+  // const toggleTheme = () => {
+  //   setTheme(theme === 'buisness' ? 'light' : 'buisness')
+  // }
+  // const toggleBuisness = () => {
+  //   setTheme('buisness')
+  // }
+  // const toggleLight = () => {
+  //   setTheme('light')
+  // }
 
-  useEffect(() => {
-    document.querySelector('html').setAttribute('data-theme', theme)
-  }, [theme])
+  // useEffect(() => {
+  //   document.querySelector('html').setAttribute('data-theme', theme)
+  // }, [theme])
 
   const onLogout = () => {
     dispatch(logout())
@@ -46,7 +46,7 @@ const Header = () => {
           <div className='mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center'>
             <ul className='menu menu-horizontal px-1'>
               <li>
-                <div className='btn-group'>
+                {/* <div className='btn-group'>
                   <input
                     type='radio'
                     name='options'
@@ -58,11 +58,11 @@ const Header = () => {
                     defaultChecked
                     type='radio'
                     name='options'
-                    data-title='luxury'
+                    data-title='buisness'
                     className='btn'
-                    onClick={toggleLuxury}
+                    onClick={toggleBuisness}
                   />
-                </div>
+                </div> */}
               </li>
               {user ? (
                 <>

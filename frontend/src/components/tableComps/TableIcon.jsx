@@ -16,6 +16,7 @@ const Table = ({ open, table, seats, handleToggleOpen }) => {
             : 'relative flex h-60 transform items-end border-2 bg-red-500 border-black transition-transform group-hover:-translate-x-2 group-hover:-translate-y-2'
         }
       >
+        <button></button>
         <div class='p-4 text-white !pt-0 transition-opacity group-hover:absolute group-hover:opacity-0 sm:p-6 lg:p-8'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

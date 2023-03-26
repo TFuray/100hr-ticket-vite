@@ -24,7 +24,7 @@ const SampleTicket = ({ ticket, user }) => {
       return (
         <button
           onClick={onClick}
-          className="inline-flex items-center px-3 py-2 text-md font-bold font-medium text-center text-black bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 "
+          className="inline-flex items-center px-3 py-2 text-md text-lg font-bold text-center text-black bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-400 "
         >
           Start
         </button>
@@ -33,7 +33,7 @@ const SampleTicket = ({ ticket, user }) => {
     if (ticket.status === "inProgress") {
       return (
         <button
-          className="inline-flex items-center px-3  py-2 text-md font-bold font-medium text-center text-black bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-yellow-500 dark:hover:bg-yellow-600 dark:focus:ring-yellow-300 "
+          className="inline-flex items-center px-3  py-2 text-md font-bold text-lg text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-300 "
           onClick={onClick}
         >
           Completed
@@ -47,7 +47,7 @@ const SampleTicket = ({ ticket, user }) => {
   }
 
   return (
-    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-secondary dark:border-gray-700">
+    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-info dark:border-gray-700">
       <div>
         {/* {ticket.user == user._id ? (
           <button

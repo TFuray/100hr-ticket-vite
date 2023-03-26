@@ -105,8 +105,8 @@ const Dashboard = () => {
         <button
           className={
             flip
-              ? "btn btn-active btn-secondary"
-              : "btn btn-outline btn-secondary"
+              ? "btn btn-active btn-info"
+              : "btn btn-outline btn-info"
           }
           onClick={showFront}
         >
@@ -117,7 +117,7 @@ const Dashboard = () => {
           style={{ width: "100px" }}
         ></div>
         <button
-          className={!flip ? "btn btn-warning" : "btn btn-outline btn-warning"}
+          className={!flip ? "btn btn-accent" : "btn btn-outline btn-accent"}
           onClick={showBack}
         >
           Back Of House
@@ -150,7 +150,7 @@ const Dashboard = () => {
             <section className="flex flex-col w-80 ">
               <h2 className="mb-4 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-4xl dark:text-white">
                 Side Work: <br></br>
-                <span className="text-blue-600 dark:text-yellow-500">
+                <span className="text-blue-600 dark:text-yellow-600">
                   In Progress
                 </span>
               </h2>
