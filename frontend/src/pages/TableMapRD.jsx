@@ -6,7 +6,7 @@ import tableData from '../data/tables'
 import { useNavigate } from 'react-router-dom'
 
 const TableMap = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const { user } = useSelector(state => state.auth)
   const [tableList, setTableList] = useState(tableData)
 
