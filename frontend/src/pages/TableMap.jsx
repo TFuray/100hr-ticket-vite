@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import TableIcon from '../components/tableComps/TableIcon'
 import tableData from '../data/tables'
 
+
 const TableMapDRAFT = () => {
   const [tableList, setTableList] = useState(tableData)
 
@@ -21,6 +22,7 @@ const TableMapDRAFT = () => {
 
   return (
     <>
+    <h2 className='text-center mb-12 text-3xl font-bold'>Coming Soon</h2>
       <div className='grid grid-flow-col grid-rows-5 gap-5 place-items-center'>
         {tableList.map(table => (
           <div

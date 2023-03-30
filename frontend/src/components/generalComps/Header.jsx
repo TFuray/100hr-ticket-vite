@@ -45,25 +45,7 @@ const Header = () => {
 
           <div className='mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center'>
             <ul className='menu menu-horizontal px-1'>
-              <li>
-                {/* <div className='btn-group'>
-                  <input
-                    type='radio'
-                    name='options'
-                    data-title='light'
-                    className='btn'
-                    onClick={toggleLight}
-                  />
-                  <input
-                    defaultChecked
-                    type='radio'
-                    name='options'
-                    data-title='buisness'
-                    className='btn'
-                    onClick={toggleBuisness}
-                  />
-                </div> */}
-              </li>
+             
               {user ? (
                 <>
                   <li tabIndex={0} className='z-50 drop-shadow-md'>
@@ -81,10 +63,10 @@ const Header = () => {
                     </a>
                     <ul className='p-2 bg-base-100 z-50'>
                       <li>
-                        <Link to='/map'>Table Map</Link>
+                        <Link to='/'>Side Work</Link>
                       </li>
                       <li>
-                        <Link to='/'>Side Work</Link>
+                        <Link to='/map'>Table Map</Link>
                       </li>
                       <li>
                         <Link to='/orders'>All Orders </Link>

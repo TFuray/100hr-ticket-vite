@@ -1,14 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-const colors = require('tailwindcss/colors');
+const colors = require("tailwindcss/colors")
 
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}',
-    "./node_modules/flowbite/**/*.js"
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./node_modules/flowbite/**/*.js"],
   theme: {
     colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
+      transparent: "transparent",
+      current: "currentColor",
       black: colors.black,
       white: colors.white,
       rose: colors.rose,
@@ -18,7 +16,7 @@ module.exports = {
       violet: colors.violet,
       indigo: colors.indigo,
       blue: colors.blue,
-      sky: colors.sky, // As of Tailwind CSS v2.2, `lightBlue` has been renamed to `sky`  
+      sky: colors.sky, // As of Tailwind CSS v2.2, `lightBlue` has been renamed to `sky`
       cyan: colors.cyan,
       teal: colors.teal,
       emerald: colors.emerald,
@@ -34,10 +32,11 @@ module.exports = {
       neutral: colors.blueGray,
       stone: colors.stone,
     },
-    extend: {}
+    extend: {},
   },
   plugins: [
-    require('daisyui'),
+    require("daisyui"),
+    require("@tailwindcss/line-clamp"),
     // require('flowbite/plugin')
   ],
   daisyui: {
@@ -46,7 +45,6 @@ module.exports = {
     base: true,
     utils: true,
     darkTheme: "buisness",
-    lightTheme: "aqua"
-  }
-
+    lightTheme: "aqua",
+  },
 }

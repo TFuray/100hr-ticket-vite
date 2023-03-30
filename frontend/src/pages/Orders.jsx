@@ -1,9 +1,8 @@
-import TicketItem from "../components/ticketComps/TicketItem"
 
 const Orders = () => {
   return (
     <div>
-    <TicketItem />
+      <h2 className="text-center mb-12 text-3xl font-bold">Coming Soon</h2>{" "}
     </div>
   )
 }
