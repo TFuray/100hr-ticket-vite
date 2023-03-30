@@ -10,11 +10,10 @@ const SampleTicket = ({ ticket, user }) => {
   const dispatch = useDispatch()
 
   const onClick = () => {
-    if (ticket.status == 'Open') {
+    if (ticket.status == "Open") {
       dispatch(completeTicket(ticket._id))
       dispatch(reset)
-    }
-    else if (ticket.status == 'inProgress') {
+    } else if (ticket.status == "inProgress") {
       dispatch(completedTicket(ticket._id))
     }
   }
@@ -33,17 +32,24 @@ const SampleTicket = ({ ticket, user }) => {
     if (ticket.status === "inProgress") {
       return (
         <button
-          className="inline-flex items-center px-3  py-2 text-md font-bold text-lg text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-300 "
+          className="inline-flex items-center px-3  py-2 text-md font-bold text-lg text-center text-black bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-300 "
           onClick={onClick}
         >
-          Completed
+          Finshed
+        </button>
+      )
+    }
+    if (ticket.status === "completed") {
+      return (
+        <button className="inline-flex items-center px-3  py-2 text-md font-bold text-lg text-center text-black bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-300 ">
+          Complete
         </button>
       )
     }
   }
 
   function deleteButton() {
-   null 
+    null
   }
 
   return (
@@ -71,16 +77,19 @@ const SampleTicket = ({ ticket, user }) => {
         )} */}
       </div>
       {ticket.status == "completed" ? (
-        <div className="line-through decoration-red-600 decoration-2 ">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {ticket.title}
-          </h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {ticket.description}
-          </p>
+        <div>
+          <div className="line-through decoration-red-600 decoration-2 ">
+            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              {ticket.title}
+            </h5>
+            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              {ticket.description}
+            </p>
+          </div>
           {renderButton()}
         </div>
-      ) :  <>
+      ) : (
+        <>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {ticket.title}
           </h5>
@@ -88,7 +97,8 @@ const SampleTicket = ({ ticket, user }) => {
             {ticket.description}
           </p>
           {renderButton()}
-        </>}
+        </>
+      )}
     </div>
   )
 }
