@@ -11,9 +11,9 @@ const {
 
 const { protect } = require('../middleware/authMiddleware')
 
-router.route('/').get(getTickets).post(protect, setTickets)
+router.route('/').get(protect, getTickets).post(protect, setTickets)
 router.route('/:id').delete(protect, deleteTicket)
-router.route('/complete/:id').put(completeTicket)
-router.route('/completed/:id').put(completedTicket)
+router.route('/complete/:id').put(protect, completeTicket)
+router.route('/completed/:id').put(protect, completedTicket)
 
 module.exports = router

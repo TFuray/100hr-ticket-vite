@@ -34,6 +34,7 @@ const Header = () => {
       <div className='mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:px-8'>
         <div className='sm:flex sm:items-center sm:justify-between'>
           <div className='text-center sm:text-left'>
+            <Link to='/'>
             <h1 className='text-2xl font-bold rgb(166, 173, 187) sm:text-3xl drop-shadow-md'>
               Welcome Back {user && user.name}!
             </h1>
@@ -41,6 +42,7 @@ const Header = () => {
             <p className='mt-1.5 text-lg text-gray-500 drop-shadow-md'>
               The Whole House
             </p>
+            </Link>
           </div>
 
           <div className='mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center'>
