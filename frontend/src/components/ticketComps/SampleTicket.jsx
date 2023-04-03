@@ -12,7 +12,7 @@ const SampleTicket = ({ ticket, user }) => {
   const onClick = () => {
     if (ticket.status == "Open") {
       dispatch(completeTicket(ticket._id))
-      // dispatch(reset)
+      dispatch(reset)
     } else if (ticket.status == "inProgress") {
       dispatch(completedTicket(ticket._id))
     }
@@ -53,7 +53,7 @@ const SampleTicket = ({ ticket, user }) => {
   }
 
   return (
-    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-info dark:border-gray-700">
+    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-primary dark:border-gray-700">
       <div>
         {ticket.user == user._id ? (
           <button
@@ -64,13 +64,13 @@ const SampleTicket = ({ ticket, user }) => {
               xmlns="http://www.w3.org/2000/svg"
               fill=""
               viewBox="0 0 24 24"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="red"
               className="w-6 h-6"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>
@@ -85,7 +85,7 @@ const SampleTicket = ({ ticket, user }) => {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {ticket.title}
             </h5>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            <p className="mb-3 font-normal text-gray-700 dark:text-primary-content">
               {ticket.description}
             </p>
           </div>
@@ -96,7 +96,7 @@ const SampleTicket = ({ ticket, user }) => {
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {ticket.title}
           </h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-secondary-content">
+          <p className="mb-3 font-normal text-gray-700 dark:text-primary-content">
             {ticket.description}
           </p>
           {renderButton()}

@@ -2,8 +2,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
-import TicketForm from "../components/ticketComps/TicketForm"
-import TicketTable from "../components/ticketComps/TicketTable"
 import UpdateTicketForm from "../components/ticketComps/UpdateTicketForm"
 import TicketItem from "../components/ticketComps/TicketItem"
 import SampleTicket from "../components/ticketComps/SampleTicket"
@@ -11,7 +9,6 @@ import PageHeading from "../components/generalComps/PageHeading"
 import AddButton from "../components/ticketComps/AddButton"
 import Spinner from "../components/generalComps/Spinner"
 import { getTickets, reset } from "../features/tickets/ticketSlice"
-// import { reset } from '../features/auth/authSlice'
 
 const Dashboard = () => {
   const navigate = useNavigate()
@@ -75,11 +72,6 @@ const Dashboard = () => {
 
   return (
     <>
-      {/* <AddButton
-          color={showTicketForm ? 'red' : 'green'}
-          text={showTicketForm ? 'Close' : 'Add Ticket'}
-          onClick={() => setShowTicketForm(!showTicketForm)}
-        />  */}
       <PageHeading pageTitle="Side Work Dashboard" />
       <section className="flex justify-center">
         <div className="collapse">
@@ -105,8 +97,8 @@ const Dashboard = () => {
         <button
           className={
             flip
-              ? "btn btn-active btn-info"
-              : "btn btn-outline btn-info"
+              ? "btn btn-active btn-primary"
+              : "btn btn-outline btn-primary"
           }
           onClick={showFront}
         >
@@ -117,7 +109,7 @@ const Dashboard = () => {
           style={{ width: "100px" }}
         ></div>
         <button
-          className={!flip ? "btn btn-accent" : "btn btn-outline btn-accent"}
+          className={!flip ? "btn btn-active btn-accent" : "btn btn-outline btn-accent"}
           onClick={showBack}
         >
           Back Of House
@@ -199,7 +191,7 @@ const Dashboard = () => {
                 <span className="text-blue-600 dark:text-green-500">Open</span>
               </h2>
               {openTicketsBack.length > 0 ? (
-                <div className="goals flex flex-col">
+                <div className="goals flex gap-3 flex-col">
                   {openTicketsBack.map((ticket) => (
                     <SampleTicket
                       key={ticket._id}
@@ -221,9 +213,9 @@ const Dashboard = () => {
                 </span>
               </h2>
               {inProgressTicketsBack.length > 0 ? (
-                <div className="goals flex flex-col">
+                <div className="goals flex gap-3 flex-col">
                   {inProgressTicketsBack.map((ticket) => (
-                    <TicketItem
+                    <SampleTicket
                       key={ticket._id}
                       ticket={ticket}
                       user={user}
@@ -241,9 +233,9 @@ const Dashboard = () => {
                 <span className="text-blue-600 dark:text-red-600">Completed</span>
               </h2>
               {completedTicketsBack.length > 0 ? (
-                <div className="goals flex flex-col">
+                <div className="goals flex gap-3 flex-col">
                   {completedTicketsBack.map((ticket) => (
-                    <TicketItem
+                    <SampleTicket
                       key={ticket._id}
                       ticket={ticket}
                       user={user}
