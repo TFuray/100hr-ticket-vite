@@ -37,6 +37,8 @@ module.exports = {
   plugins: [
     require("daisyui"),
     require("@tailwindcss/line-clamp"),
+    // require("@tailwindcss/forms"),
+    // require("@tailwindcss/typography"),
     // require('flowbite/plugin')
   ],
   daisyui: {
