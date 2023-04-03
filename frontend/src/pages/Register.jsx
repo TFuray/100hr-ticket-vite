@@ -114,6 +114,8 @@ const Register = () => {
                   type="email"
                   name="email"
                   id="email"
+                  value={email}
+                  onChange={onChange}
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="name@company.com"
                   required
@@ -130,6 +132,8 @@ const Register = () => {
                   type="password"
                   name="password"
                   id="password"
+                  value={password}
+                  onChange={onChange}
                   placeholder="••••••••"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
@@ -143,49 +147,29 @@ const Register = () => {
                   Confirm password
                 </label>
                 <input
-                  type="confirm-password"
-                  name="confirm-password"
-                  id="confirm-password"
+                  type="password"
+                  name="password2"
+                  id="password2"
+                  value={password2}
+                  onChange={onChange}
                   placeholder="••••••••"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
               </div>
               <div className="flex items-start">
-                <div className="flex items-center h-5">
-                  <input
-                    id="terms"
-                    aria-describedby="terms"
-                    type="checkbox"
-                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                    required
-                  />
-                </div>
-                <div className="ml-3 text-sm">
-                  <label
-                    htmlFor="terms"
-                    className="font-light text-gray-500 dark:text-gray-300"
-                  >
-                    I accept the{" "}
-                    <a
-                      className="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                      href="#"
-                    >
-                      Terms and Conditions
-                    </a>
-                  </label>
-                </div>
+              
               </div>
               <button
                 type="submit"
-                className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                className="btn w-full text-white bg-primary hover:bg-primary-focus focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
               >
                 Create an account
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Already have an account?{" "}
                 <a
-                  href="#"
+                  href="/login"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Login here
@@ -200,65 +184,3 @@ const Register = () => {
 }
 
 export default Register
-
-// <div className="flex justify-center">
-//     <div className='card bg-primary w-80 h-96 place-content-center shadow-lg'>
-//       <section className='text-center'>
-//         <h3 className='text-white mb-3 text-xl '>Please create an account</h3>
-//       </section>
-
-//       <section className='form flex justify-center'>
-//         <form onSubmit={onSubmit}>
-//           <div className='form-group mb-1'>
-//             <input
-//               type='text'
-//               id='name'
-//               name='name'
-//               value={name}
-//               placeholder='Enter your name'
-//               onChange={onChange}
-//               className='form-control input input-bordered w-full max-w-xs'
-//             />
-//           </div>
-//           <div className='form-group mb-1'>
-//             <input
-//               type='email'
-//               id='email'
-//               name='email'
-//               value={email}
-//               placeholder='Enter your email'
-//               onChange={onChange}
-//               className='form-control input input-bordered w-full max-w-xs'
-//             />
-//           </div>
-//           <div className='form-group mb-1'>
-//             <input
-//               type='password'
-//               id='password'
-//               name='password'
-//               value={password}
-//               placeholder='Enter password'
-//               onChange={onChange}
-//               className='form-control input input-bordered w-full max-w-xs'
-//             />
-//           </div>
-//           <div className='form-group mb-1'>
-//             <input
-//               type='password'
-//               id='password2'
-//               name='password2'
-//               value={password2}
-//               placeholder='Confirm password'
-//               onChange={onChange}
-//               className='form-control input input-bordered w-full max-w-xs'
-//             />
-//           </div>
-//           <div className='form-group'>
-//             <button type='submit' className='btn btn-block'>
-//               Submit
-//             </button>
-//           </div>
-//         </form>
-//       </section>
-//     </div>
-//   </div>
