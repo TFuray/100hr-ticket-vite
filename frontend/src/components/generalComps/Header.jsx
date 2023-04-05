@@ -32,10 +32,10 @@ const Header = () => {
 
   return (
     <header
-      className="z-40"
+      className="bg-secondary z-40"
       aria-label="Page Header"
     >
-      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-xl px-4 py-2 mb-6 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <div className="text-center sm:text-left">
             <Link
@@ -44,15 +44,21 @@ const Header = () => {
             >
               <img
                 src={Logo}
-                className="w-14 h-14 mr-3 drop-shadow-lg"
+                className="w-12 h-12 mr-3 drop-shadow-lg"
                 alt=""
               />
               <div className="flex flex-col">
-                <h1 className="text-2xl font-bold rgb(166, 173, 187) sm:text-3xl drop-shadow-md">
-                  {user ? `Welcome Back  ${user.name}!` : "Welcome"}
+                <h1 className="text-white text-3xl font-bold">
+                  {user ? (
+                    <>
+                    Welcome Back <span className="text-base-300 text-3xl font-semibold ">{user.name}</span>! 
+                    </>
+                  ): (
+                  "Welcome"
+                    )}
                 </h1>
 
-                <p className="mt-1.5 text-xl text-gray-500 drop-shadow-md">
+                <p className="mt-1.5 text-2xl text-secondary-content font-bold drop-shadow-md">
                   The Whole House
                 </p>
               </div>
@@ -60,7 +66,7 @@ const Header = () => {
           </div>
 
           <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
-            <ul className="menu menu-horizontal px-1">
+            <ul className="menu menu-horizontal text-white text-lg px-1">
               {user ? (
                 <>
                   <li
@@ -79,7 +85,7 @@ const Header = () => {
                         <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                       </svg>
                     </a>
-                    <ul className="p-2 bg-base-100 z-50">
+                    <ul className="p-2 bg-base-300 z-50">
                       <li>
                         <Link to="/">Side Work</Link>
                       </li>

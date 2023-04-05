@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Orders from './pages/Orders'
 import TableMap from './pages/TableMap'
+import Footer from './components/generalComps/Footer'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path='/map' element={<TableMap />} />
             <Route path='/orders' element={<Orders />} />
           </Routes>
+          <Footer />
         </div>
       </Router>
       <ToastContainer />
