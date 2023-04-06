@@ -51,7 +51,7 @@ const Header = () => {
                 <h1 className="text-white text-3xl font-bold">
                   {user ? (
                     <>
-                    Welcome Back <span className="text-base-300 text-3xl font-semibold ">{user.name}</span>! 
+                    Welcome Back <span className="text-secondary-content text-3xl font-semibold ">{user.name}</span>!
                     </>
                   ): (
                   "Welcome"
