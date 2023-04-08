@@ -7,10 +7,8 @@ const Ticket = require('../models/ticketModel')
 const getTickets = asyncHandler(async (req, res) => {
   const tickets = await Ticket.find()
   // const users = await User.find()
-
   // const tickets = await Ticket.find({ user: req.user.id })
   // console.log(users)
-
   res.status(200).json(tickets)
 })
 
