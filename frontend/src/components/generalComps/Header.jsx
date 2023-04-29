@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <header
-      className="bg-secondary z-40"
+      className="bg-neutral z-40"
       aria-label="Page Header"
     >
       <div className="mx-auto max-w-screen-xl px-4 py-2 mb-6 sm:px-6 lg:px-8">
@@ -51,14 +51,14 @@ const Header = () => {
                 <h1 className="text-white text-3xl font-bold">
                   {user ? (
                     <>
-                    Welcome Back <span className="text-secondary-content text-3xl font-semibold ">{user.name}</span>!
+                    Welcome Back <span className="text-accent text-3xl font-semibold ">{user.name}</span>!
                     </>
                   ): (
                   "Welcome"
                     )}
                 </h1>
 
-                <p className="mt-1.5 text-2xl text-secondary-content font-bold drop-shadow-md">
+                <p className="mt-1.5 text-2xl text-accent font-bold drop-shadow-md">
                   The Whole House
                 </p>
               </div>
